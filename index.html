@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Śaṅkara's Metaphoric Architecture · Series A · Part Four · Cultural Musings</title>
+  <style>
+    :root{
+      --paper:#fbf7ee;--paper-deep:#f3ecdd;--ink:#2a2018;--ink-soft:#5b4d3c;
+      --crimson:#7d1f2b;--crimson-deep:#5c1620;--gold:#a9772f;--gold-soft:#c79a4f;
+      --line:#d8c9a8;--line-soft:#e8ddc4;--sidebar-bg:#1a1410;--sidebar-ink:#e7d9bd;
+      --sidebar-ink-dim:#a3917a;--teal:#1a5c52;--teal-soft:#2a7a6e;
+      --violet:#4a2070;--violet-soft:#6a3a90;
+      --serif:"Tiro Devanagari Sanskrit","Noto Serif Devanagari","Palatino Linotype",Palatino,Georgia,serif;
+      --serif-body:Georgia,"Palatino Linotype",Palatino,"Book Antiqua",serif;
+      --sans:"Helvetica Neue",Arial,sans-serif;
+    }
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:var(--serif-body);font-size:17px;line-height:1.75;scroll-behavior:smooth;}
+    a{color:var(--crimson);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .skt{font-family:var(--serif);}
+    .shell{display:grid;grid-template-columns:290px 1fr;min-height:100vh;}
+    .sidebar{background:var(--sidebar-bg);color:var(--sidebar-ink);padding:34px 26px 60px;position:sticky;top:0;height:100vh;overflow-y:auto;}
+    .sidebar::-webkit-scrollbar{width:6px;}
+    .sidebar::-webkit-scrollbar-thumb{background:#3a2c22;border-radius:4px;}
+    .brand{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:6px;}
+    .brand-sub{font-size:11px;color:var(--sidebar-ink-dim);letter-spacing:.12em;margin-bottom:28px;}
+    .series-tag{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sidebar-ink-dim);margin-bottom:4px;}
+    .doc-title{font-family:var(--serif);font-size:20px;line-height:1.3;color:#fff;margin:6px 0 26px;}
+    .nav-heading{font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin:22px 0 10px;border-top:1px solid #3a2c22;padding-top:18px;}
+    .nav-heading.first{border-top:none;padding-top:0;margin-top:0;}
+    .tab-link{display:block;font-family:var(--sans);font-size:13px;color:var(--sidebar-ink);padding:7px 10px;border-radius:4px;margin-bottom:2px;cursor:pointer;border-left:2px solid transparent;line-height:1.4;}
+    .tab-link:hover{background:#2c211b;text-decoration:none;}
+    .tab-link.active{background:#2f231c;border-left:2px solid var(--gold-soft);color:#fff;font-weight:600;}
+    .tab-link .num{color:var(--gold-soft);margin-right:6px;font-family:var(--serif);}
+    .tab-link.new-tab{border-left:2px solid var(--violet-soft);}
+    .tab-link.new-tab.active{border-left:2px solid var(--violet-soft);background:#251830;}
+    .tab-link.new-tab .num{color:#a070d0;}
+    .series-list{margin-top:8px;}
+    .series-item{display:block;font-family:var(--sans);font-size:12px;color:var(--sidebar-ink-dim);padding:6px 10px;line-height:1.5;border-left:2px solid transparent;}
+    .series-item.current{color:#fff;border-left:2px solid var(--crimson);background:#2c211b;font-weight:600;}
+    .series-item:hover{text-decoration:none;color:var(--sidebar-ink);}
+    .main{padding:0;max-width:980px;}
+    .top-strip{background:var(--paper-deep);border-bottom:1px solid var(--line);padding:14px 56px;font-family:var(--sans);font-size:11.5px;letter-spacing:.08em;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+    .hero{padding:54px 56px 36px;border-bottom:3px double var(--gold);}
+    .hero-skt{font-family:var(--serif);font-size:16px;color:var(--gold);letter-spacing:.04em;margin-bottom:14px;}
+    .hero-tag{font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--crimson);margin-bottom:10px;}
+    .hero h1{font-family:var(--serif);font-size:40px;line-height:1.18;color:var(--crimson-deep);margin:0 0 14px;}
+    .hero h2{font-family:var(--serif-body);font-style:italic;font-weight:400;font-size:19px;color:var(--ink-soft);margin:0 0 22px;line-height:1.5;}
+    .hero-meta{font-family:var(--sans);font-size:12px;color:var(--ink-soft);display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;padding-top:18px;border-top:1px solid var(--line-soft);}
+    .hero-meta b{color:var(--crimson);}
+    .panel{display:none;padding:46px 56px 70px;}
+    .panel.active{display:block;}
+    .panel h1.section-title{font-family:var(--serif);font-size:30px;color:var(--crimson-deep);border-bottom:2px solid var(--gold-soft);padding-bottom:14px;margin:0 0 30px;}
+    .panel.new-panel h1.section-title{border-bottom:2px solid var(--violet-soft);color:var(--violet);}
+    .section-roman{font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:.1em;margin-bottom:2px;}
+    .new-panel .section-roman{color:var(--violet-soft);}
+    h3{font-family:var(--serif-body);font-size:22px;color:var(--crimson-deep);margin:38px 0 14px;font-weight:700;}
+    .new-panel h3{color:var(--violet);}
+    h4{font-family:var(--serif-body);font-size:17.5px;color:var(--ink);font-weight:700;font-style:italic;margin:26px 0 10px;}
+    p{margin:0 0 16px;text-align:justify;hyphens:auto;}
+    .skt-block{font-family:var(--serif);font-size:22px;text-align:center;color:var(--crimson-deep);background:var(--paper-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 20px;margin:30px 0 6px;line-height:2;}
+    .skt-block.violet{color:var(--violet);}
+    .skt-translit{text-align:center;font-style:italic;color:var(--ink-soft);font-size:15px;margin:0 0 4px;}
+    .skt-gloss{text-align:center;font-family:var(--sans);font-size:12.5px;color:var(--gold);letter-spacing:.04em;margin:0 0 28px;}
+    .skt-gloss.violet{color:var(--violet-soft);}
+    blockquote{margin:30px 0;padding:20px 28px;border-left:3px solid var(--crimson);background:var(--paper-deep);font-style:italic;color:var(--ink-soft);font-size:16px;line-height:1.75;}
+    blockquote.violet{border-left:3px solid var(--violet-soft);}
+    blockquote .cite{display:block;margin-top:10px;font-style:normal;font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--crimson);}
+    blockquote.violet .cite{color:var(--violet-soft);}
+    .divider{text-align:center;color:var(--gold);font-size:20px;margin:48px 0;letter-spacing:.4em;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:30px 0;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0;}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0;}
+    .card{border:1px solid var(--line);background:var(--paper-deep);padding:22px 24px;border-radius:3px;}
+    .card .clabel{font-family:var(--serif);font-size:20px;color:var(--crimson-deep);margin-bottom:4px;}
+    .card .csub{font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+    .card p{font-size:14.5px;margin-bottom:8px;text-align:left;}
+    .card .op{font-family:var(--sans);font-size:11.5px;font-style:italic;color:var(--crimson);}
+    .card-violet{border-color:var(--violet-soft);background:#f5f0fa;}
+    .card-violet .clabel{color:var(--violet);}
+    .card-violet .csub{color:var(--violet-soft);}
+    .card-violet .op{color:var(--violet);}
+    .card-gold{border-color:var(--gold);background:#fdf8ed;}
+    .card-gold .clabel{color:var(--gold);}
+    .card-gold .csub{color:var(--gold-soft);}
+    .card-teal{border-color:var(--teal-soft);background:#f0f7f5;}
+    .card-teal .clabel{color:var(--teal);}
+    .card-teal .csub{color:var(--teal-soft);}
+    table.data-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:14.5px;}
+    table.data-table caption{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:left;margin-bottom:8px;}
+    table.data-table th{background:var(--crimson-deep);color:#fff;font-family:var(--sans);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;text-align:left;padding:10px 14px;}
+    table.data-table th.violet{background:var(--violet);}
+    table.data-table td{padding:9px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;}
+    table.data-table tr:nth-child(even) td{background:var(--paper-deep);}
+    table.data-table td.skt-cell{font-family:var(--serif);font-size:17px;color:var(--crimson-deep);}
+    table.data-table td.skt-cell.violet{color:var(--violet);}
+    .partmap{width:100%;border-collapse:collapse;margin:20px 0 40px;font-size:14px;}
+    .partmap th{background:var(--sidebar-bg);color:var(--gold-soft);font-family:var(--sans);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;text-align:left;}
+    .partmap td{padding:11px 14px;border-bottom:1px solid var(--line-soft);}
+    .partmap tr.current td{background:var(--paper-deep);font-weight:700;color:var(--crimson-deep);}
+    .partmap td.part-num{font-family:var(--serif);font-size:17px;color:var(--crimson-deep);}
+    .ground-note{background:var(--paper-deep);border:1px solid var(--line);border-radius:4px;padding:22px 26px;margin:0 0 36px;font-size:14.8px;}
+    .ground-note .gn-label{font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson);margin-bottom:8px;}
+    .ground-note.violet{border-color:var(--violet-soft);}
+    .ground-note.violet .gn-label{color:var(--violet);}
+    .metaphor-card{border:1px solid var(--line);border-radius:4px;margin:20px 0;overflow:hidden;}
+    .mc-head{background:var(--crimson-deep);color:#fff;padding:16px 22px;display:flex;align-items:center;gap:16px;}
+    .mc-head .mc-skt{font-family:var(--serif);font-size:24px;color:var(--gold-soft);}
+    .mc-head .mc-title{font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);}
+    .mc-head .mc-name{font-size:18px;font-weight:700;}
+    .mc-body{padding:20px 24px;}
+    .mc-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:14px;}
+    .mc-cell{background:var(--paper-deep);border:1px solid var(--line);border-radius:3px;padding:14px;}
+    .mc-cell .mcc-label{font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+    .mc-cell p{font-size:13.5px;margin-bottom:0;text-align:left;}
+    .mantra-block{background:var(--sidebar-bg);border-radius:4px;padding:26px 30px;margin:28px 0;}
+    .mantra-block .mb-label{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px;}
+    .mantra-block .mb-skt{font-family:var(--serif);font-size:24px;color:#fff;line-height:1.9;text-align:center;margin-bottom:10px;}
+    .mantra-block .mb-translit{font-style:italic;font-size:14px;color:var(--sidebar-ink-dim);text-align:center;margin-bottom:8px;}
+    .mantra-block .mb-trans{font-size:13.5px;color:var(--gold-soft);text-align:center;margin-bottom:12px;}
+    .mantra-block .mb-source{font-family:var(--sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--sidebar-ink-dim);text-align:center;}
+    .mantra-block .mb-note{font-size:13px;color:var(--sidebar-ink-dim);margin-top:14px;padding-top:14px;border-top:1px solid #3a2c22;line-height:1.6;}
+    .case-study{border:1px solid var(--line);border-radius:4px;margin:24px 0;overflow:hidden;}
+    .cs-head{background:var(--paper-deep);padding:14px 20px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:12px;}
+    .cs-head .cs-num{font-family:var(--serif);font-size:22px;color:var(--crimson-deep);}
+    .cs-head .cs-title{font-size:17px;font-weight:700;color:var(--crimson-deep);}
+    .cs-head .cs-sub{font-family:var(--sans);font-size:11px;color:var(--ink-soft);letter-spacing:.06em;}
+    .cs-body{padding:20px 24px;}
+    .cs-body p{font-size:14.5px;}
+    .cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+    .cs-cell{background:var(--paper-deep);border:1px solid var(--line);border-radius:3px;padding:14px;}
+    .cs-cell .csc-label{font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+    .cs-cell p{font-size:13px;margin:0;text-align:left;}
+    .timeline{position:relative;margin:30px 0;}
+    .timeline::before{content:"";position:absolute;left:22px;top:0;bottom:0;width:2px;background:var(--line);}
+    .tl-item{position:relative;padding-left:56px;margin-bottom:28px;}
+    .tl-dot{position:absolute;left:14px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--crimson-deep);border:2px solid var(--gold);}
+    .tl-label{font-family:var(--sans);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+    .tl-title{font-family:var(--serif-body);font-size:17px;font-weight:700;color:var(--crimson-deep);margin-bottom:6px;}
+    .tl-body{font-size:14.5px;color:var(--ink-soft);}
+    .accordion-item{border:1px solid var(--line);border-radius:3px;margin-bottom:10px;}
+    .accordion-header{padding:14px 20px;cursor:pointer;font-family:var(--serif-body);font-size:16px;font-weight:700;color:var(--crimson-deep);background:var(--paper-deep);display:flex;justify-content:space-between;align-items:center;user-select:none;}
+    .accordion-header::after{content:"▾";color:var(--gold);font-size:14px;transition:transform .2s;}
+    .accordion-header.open::after{transform:rotate(-180deg);}
+    .accordion-body{display:none;padding:18px 22px;font-size:14.8px;border-top:1px solid var(--line);}
+    .accordion-body.open{display:block;}
+    .new-section-badge{display:inline-block;font-family:var(--sans);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;background:var(--violet);color:#fff;padding:2px 8px;border-radius:2px;margin-left:6px;vertical-align:middle;}
+    .fn-list{font-size:14px;}
+    .fn-list .fn{display:flex;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line-soft);}
+    .fn-list .fn .fnum{color:var(--crimson);font-weight:700;flex-shrink:0;width:22px;}
+    .bib-block{margin-bottom:22px;}
+    .bib-block h4.bib-heading{font-style:normal;font-family:var(--sans);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:14px;}
+    .bib-entry{font-size:14.5px;margin-bottom:10px;padding-left:24px;text-indent:-24px;}
+    .bib-entry i{font-style:italic;}
+    .gloss-entry{display:grid;grid-template-columns:190px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--line-soft);}
+    .gloss-term{font-family:var(--serif);font-size:18px;color:var(--crimson-deep);}
+    .gloss-term .translit{display:block;font-family:var(--sans);font-style:italic;font-size:12px;color:var(--gold);margin-top:2px;}
+    .gloss-def{font-size:14.5px;color:var(--ink);line-height:1.6;}
+    .gloss-section-label{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:32px 0 6px;border-bottom:1px solid var(--line);padding-bottom:8px;}
+    .gloss-section-label.first{margin-top:8px;}
+    .footer-band{background:var(--sidebar-bg);color:var(--sidebar-ink-dim);text-align:center;padding:50px 40px;font-family:var(--sans);}
+    .footer-band .om{font-family:var(--serif);font-size:26px;color:var(--gold-soft);margin-bottom:8px;}
+    .footer-band .om-translit{font-size:12px;font-style:italic;margin-bottom:30px;}
+    .footer-band .fb-title{color:#fff;font-size:14px;margin-bottom:4px;}
+    .footer-band .fb-sub{font-size:11.5px;}
+    @media(max-width:900px){
+      .shell{grid-template-columns:1fr;}
+      .sidebar{position:relative;height:auto;}
+      .hero,.panel,.top-strip{padding-left:24px;padding-right:24px;}
+      .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}
+      .hero h1{font-size:30px;}
+      .mc-row,.cs-grid{grid-template-columns:1fr;}
+      .gloss-entry{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="brand">CULTURAL MUSINGS</div>
+  <div class="brand-sub">Vedic &amp; Śāstric Research Platform</div>
+  <div class="series-tag">Series A · Part IV of VI</div>
+  <div class="doc-title">Śaṅkara's Metaphoric Architecture</div>
+  <div class="nav-heading first">Core Twelve Sections</div>
+  <a class="tab-link" data-tab="series-context">Series Context</a>
+  <a class="tab-link" data-tab="abstract">Abstract</a>
+  <a class="tab-link" data-tab="section-1"><span class="num">I.</span>The Bhāṣya as Philosophical Event</a>
+  <a class="tab-link" data-tab="section-2"><span class="num">II.</span>Metaphor as Interface Operation</a>
+  <a class="tab-link" data-tab="section-3"><span class="num">III.</span>The Rope and the Snake</a>
+  <a class="tab-link" data-tab="section-4"><span class="num">IV.</span>The Mirror and Reflection</a>
+  <a class="tab-link" data-tab="section-5"><span class="num">V.</span>The Dream and the Dreamer</a>
+  <a class="tab-link" data-tab="section-6"><span class="num">VI.</span>The Tenth Man</a>
+  <a class="tab-link" data-tab="section-7"><span class="num">VII.</span>Space in a Jar</span></a>
+  <a class="tab-link" data-tab="section-8"><span class="num">VIII.</span>Pedagogical Sequence</a>
+  <a class="tab-link" data-tab="section-9"><span class="num">IX.</span>Neti Neti — The Negative Way</a>
+  <a class="tab-link" data-tab="section-10"><span class="num">X.</span>Language at the Limit</a>
+  <a class="tab-link" data-tab="section-11"><span class="num">XI.</span>Synthesis: The Architecture as Whole</a>
+  <a class="tab-link" data-tab="section-12"><span class="num">XII.</span>Forward to Part V</a>
+  <div class="nav-heading">Extended Studies <span class="new-section-badge">NEW</span></div>
+  <a class="tab-link new-tab" data-tab="section-13"><span class="num">XIII.</span>Mantra Case Studies — Core Eight</a>
+  <a class="tab-link new-tab" data-tab="section-14"><span class="num">XIV.</span>Mahāvākya Analysis</a>
+  <a class="tab-link new-tab" data-tab="section-15"><span class="num">XV.</span>Bīja Mantras &amp; Cakra Resonance</a>
+  <a class="tab-link new-tab" data-tab="section-16"><span class="num">XVI.</span>Textual Case Studies</a>
+  <a class="tab-link new-tab" data-tab="section-17"><span class="num">XVII.</span>Living Practice Case Studies</a>
+  <div class="nav-heading">Reference</div>
+  <a class="tab-link" data-tab="footnotes">Footnotes</a>
+  <a class="tab-link" data-tab="bibliography">Bibliography</a>
+  <a class="tab-link" data-tab="glossary">Glossary</a>
+  <div class="nav-heading">Series A — All Parts</div>
+  <div class="series-list">
+    <a class="series-item" href="https://shastrasextentionvak.culturalmusings.com/">Part I · The Ground Before the Word</a>
+    <a class="series-item" href="#">Part II · The Script as Philosophy</a>
+    <a class="series-item" href="https://shastrasextentionvaktwo.culturalmusings.com/">Part III · Prakṛti–Puruṣa as Living Interface</a>
+    <a class="series-item current">Part IV · Śaṅkara's Metaphoric Architecture</a>
+    <a class="series-item">Part V · The Bhāṣya Tradition as Lineage</a>
+    <a class="series-item">Part VI · Vāk Returning to Itself</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="top-strip">
+    <span>रज्जुसर्पः · दर्पणप्रतिबिम्बम् · स्वप्नः · दशमः · घटाकाशः · नेति नेति · महावाक्यम्</span>
+    <span>Series A · Part Four of Six · Extended Edition · 17 Sections</span>
+  </div>
+
+  <header class="hero">
+    <div class="hero-skt skt">शाङ्करभाष्यस्य रूपकशास्त्रम् — रूपकाणि दर्शनस्य वाहकानि</div>
+    <div class="hero-tag">Śaṅkara's Metaphoric Architecture · Extended Edition with Case Studies &amp; Mantras</div>
+    <h1>Śaṅkara's Metaphoric Architecture</h1>
+    <h2>How the Brahmasūtra-Bhāṣya's Load-Bearing Images Enact the Non-Dual Recognition — with Extended Studies in Mantra Case Studies, Mahāvākya Analysis, Bīja Phonology, Textual and Living-Practice Studies</h2>
+    <div class="hero-meta">
+      <span><b>Series</b> A · Part IV of VI</span>
+      <span><b>Vāk Level</b> Vaikharī — The Word Enacted in Diction</span>
+      <span><b>Format</b> White Paper · Extended Edition · 17 Sections</span>
+      <span><b>New Sections</b> XIII–XVII · Mantras, Mahāvākyas, Bījas, Textual &amp; Practice Case Studies</span>
+    </div>
+  </header>
+
+  <!-- ===== SERIES CONTEXT ===== -->
+  <section class="panel" id="series-context">
+    <div class="section-roman">↗</div>
+    <h1 class="section-title">Series Context and Orientation</h1>
+    <div class="ground-note">
+      <div class="gn-label">Where Part Four Stands</div>
+      <p style="margin-bottom:0">Parts One through Three established, respectively, the philosophical ground of language (sphoṭa, four vāk-levels, Sanskrit as philosophical necessity), the philosophical content encoded in the visible script (Māheśvara sūtras, akṣara ontology), and the ontological engine of the entire system (the Puruṣa–Prakṛti interface, the tattva-hierarchy, the guṇa-matrix). Part Four now arrives at what all three prior parts were approaching: the specific, historically embedded, philosophically potent words of Śaṅkara — and in particular, the specific images (rope-snake, mirror-reflection, dream, the tenth man, space in a jar) that function not as rhetorical embellishment but as the load-bearing philosophical devices through which the Brahmasūtra-Bhāṣya moves its reader from the empirical framework of apparent duality toward the non-dual recognition. The extended edition adds five further sections — XIII through XVII — incorporating comprehensive mantra case studies, mahāvākya analysis, bīja-phoneme studies, textual case studies from the bhāṣya corpus, and living-practice case studies from the sādhana tradition.</p>
+    </div>
+    <h3>The Thesis in One Sentence</h3>
+    <p>Śaṅkara's metaphors are not illustrations of arguments already complete without them; they are the arguments — precise interface-operations calibrated to shift the reader's buddhi from tāmasika or rājasika configurations (in which the phenomenal world is taken as ultimately real) toward the sāttvika clarity in which the non-dual recognition becomes not merely intellectually available but existentially operative.</p>
+    <table class="partmap">
+      <tr><th>Part</th><th>Vāk Level</th><th>Focus</th></tr>
+      <tr><td class="part-num">I</td><td>Parā · Paśyantī</td><td>The Ground Before the Word — Sphoṭa, Prākrit Inference, Philosophical Necessity of Sanskrit</td></tr>
+      <tr><td class="part-num">II</td><td>Paśyantī–Madhyamā</td><td>The Script as Philosophy — Devanāgarī, Akṣara Ontology, What the Letter Carries</td></tr>
+      <tr><td class="part-num">III</td><td>Madhyamā</td><td>Prakṛti–Puruṣa as Living Interface: Experience, Language, Liberation</td></tr>
+      <tr class="current"><td class="part-num">IV</td><td>Vaikharī</td><td>This Paper — Śaṅkara's Metaphoric Architecture: How the Bhāṣya Diction Enacts What It Describes · Extended with Sections XIII–XVII</td></tr>
+      <tr><td class="part-num">V</td><td>All Four</td><td>The Bhāṣya Tradition as Lineage — Diction as Lineage, Inheritance and Transformation</td></tr>
+      <tr><td class="part-num">VI</td><td>All Four → Parā</td><td>Vāk Returning to Itself — Pratiprasava of Language, Handoff to Series B</td></tr>
+    </table>
+    <blockquote>The philosopher who reaches for a metaphor is not ornamenting a logical argument with a decorative illustration. The philosopher is doing something else: reaching for an instrument capable of transmitting what logical argument alone cannot — the shift in the mode of knowing, not merely an addition to its contents.<span class="cite">Series A · Editorial Framework</span></blockquote>
+  </section>
+
+  <!-- ===== ABSTRACT ===== -->
+  <section class="panel" id="abstract">
+    <div class="section-roman">✦</div>
+    <h1 class="section-title">Abstract</h1>
+    <p>This paper examines what Series A designates Śaṅkara's metaphoric architecture: the system of load-bearing images that constitutes the rhetorical and philosophical backbone of the Brahmasūtra-Bhāṣya, and which functions, on the reading developed here, not as supplementary illustration but as the primary vehicle of the bhāṣya's transformative philosophical operation.</p>
+    <p>Sections I–XII develop the core argument. Section I establishes the bhāṣya as a philosophical event of the Vaikharī level — the moment at which the interface-model of Part Three descends into specific, historically located, physically produced Sanskrit diction. Section II theorises the category of metaphor-as-interface-operation: the claim that Śaṅkara's key images are not figures of speech but instruments of cognitive reorientation operating directly at the level of buddhi. Sections III through VII examine the five principal images in turn: the rope-snake (<em>rajju-sarpa</em>), the mirror-reflection (<em>darpaṇa-pratibimba</em>), the dream (<em>svapna</em>), the tenth man (<em>daśama</em>), and space in a jar (<em>ghaṭākāśa</em>). Section VIII analyses the pedagogical sequence in which these images are deployed across the bhāṣya. Section IX examines the apophatic complement: <em>neti neti</em> as the bhāṣya's negative architectural principle. Section X returns to the question of language at its limits — what Śaṅkara does when the metaphors themselves require critique. Section XI synthesises the entire architecture as a functional whole. Section XII prepares the handoff to Part Five.</p>
+    <p>The extended studies of Sections XIII–XVII constitute the research core for which this extended edition was commissioned. Section XIII provides comprehensive case studies of eight primary mantras whose phonological structure encodes the metaphoric architecture developed in the bhāṣya — establishing the mantra tradition as the oral archive of what the bhāṣya expresses in written prose. Section XIV analyses the four Mahāvākyas (Great Sayings) as the architectural keystones of the entire Vedāntic metaphoric system. Section XV examines bīja mantras and their cakra correspondences as the embodied phonological enactment of the interface-model. Section XVI provides four textual case studies from across the bhāṣya corpus. Section XVII presents five living-practice case studies in which the metaphoric architecture is actively deployed in contemporary sādhana contexts.</p>
+    <div class="ground-note">
+      <div class="gn-label">Reading Note — Mantras and Case Studies as Research Infrastructure</div>
+      <p style="margin-bottom:0">Sections XIII–XVII are specifically designed as research infrastructure for readers working in the fields of Sanskrit studies, philosophy of religion, contemplative studies, and consciousness research. Each mantra entry provides: the Devanāgarī text, transliteration, word-by-word gloss, translation, source-text citation, phonological analysis, interface-level assignment, metaphoric-architecture connection, and research notes. The case studies provide methodological models for applying the interface-analysis developed across Series A to specific texts, practices, and traditions.</p>
+    </div>
+  </section>
+
+  <!-- ===== SECTION I ===== -->
+  <section class="panel" id="section-1">
+    <div class="section-roman">I.</div>
+    <h1 class="section-title">The Bhāṣya as Philosophical Event: Vaikharī Descending into History</h1>
+    <h3>1.1 The Bhāṣya Genre and Its Philosophical Stakes</h3>
+    <p>The Sanskrit genre of the <em>bhāṣya</em> — commentary, exposition, explanation — occupies a peculiar philosophical position. It is, formally, secondary: it presupposes a prior text (<em>mūla</em>) and presents itself as the servant of that text, explaining, clarifying, defending, and extending it. Yet the bhāṣya tradition's greatest achievements are not secondary in any philosophically meaningful sense. Śaṅkara's Brahmasūtra-Bhāṣya, his commentaries on the principal Upaniṣads (the Bṛhadāraṇyaka, Chāndogya, Taittirīya, Aitareya, Māṇḍūkya-Kārikā, Muṇḍaka, Praśna, Kena, Kaṭha, and Īśā), and his Bhagavadgīṭā-Bhāṣya are among the most philosophically original, technically precise, and argumentatively sophisticated texts in the history of Indian thought — not despite their commentary format but through it.</p>
+    <p>The bhāṣya genre's formal secondariness is philosophically productive rather than limiting. By positioning itself as explanation of what the Upaniṣads already say, the bhāṣya tradition places the weight of authority not on the commentator's personal philosophical insight but on the śruti — the heard, revealed scripture — and thereby gives itself permission to make the most radical philosophical claims while appearing merely to explain what was always already there. Śaṅkara's Advaita is not presented as his philosophy; it is presented as the Upaniṣads' own teaching, correctly understood. The bhāṣya's rhetoric of humility before the text is itself a philosophical device: it locates the authority of the non-dual claim in a domain beyond the individual commentator's personal standing.</p>
+    <h3>1.2 The Vaikharī Dimension: Words on the Page</h3>
+    <p>Within the four-vāk framework developed in Part One and applied throughout Series A, the bhāṣya operates at the Vaikharī level: it is physically produced language — ink on palm-leaf, sound in the guru's discourse, words recited by the student in the gurukula. Yet, as Part One established, the Vaikharī level is not merely the mechanical delivery-system for content that exists independently at Madhyamā or Paśyantī; it is the level at which the interface's full downward movement is completed, where the primordial potency of Parā has traversed all four levels and arrived at historically specific, phonologically determinate, publicly available expression.</p>
+    <p>Śaṅkara's bhāṣya prose is among the most carefully crafted Vaikharī in the Sanskrit tradition. Its sentences have a characteristic rhythmic structure — alternating between dense, technical analysis and suddenly accessible, image-rich illustration — that is not stylistic accident but philosophical design. The rhythm mirrors the pedagogical movement the bhāṣya intends to produce in its reader: from the opacity of conceptual engagement to the relative transparency of the imagistic moment, and back again with deepened conceptual resources.</p>
+    <h3>1.3 From Interface to Diction: What Part Three Prepared</h3>
+    <p>Part Three established that the Puruṣa–Prakṛti interface produces, at the Madhyamā level, the grammatically structured, sequentially differentiated mental word that is the domain of Pāṇini's analysis. Śaṅkara's bhāṣya is that Madhyamā-level precision fully enacted at the Vaikharī level: it is the interface's own self-articulation in maximally disciplined Sanskrit prose. Every compound, every case-ending, every sandhi-junction in the bhāṣya is a moment at which the interface's sāttvika orientation is enacted through the deliberate maintenance of Sanskrit's phonological and grammatical discipline against the natural tāmasika drift toward Prākrit simplification.</p>
+    <blockquote>The bhāṣya is not a book about the Upaniṣads. It is the Upaniṣads' own understanding of themselves, occurring — for the first time in its fullest form — in historical time, in the mouth of a particular person, in a particular language, at a particular moment. That is the Vaikharī: not diminishment, but arrival.<span class="cite">Series A · Editorial Framework</span></blockquote>
+  </section>
+
+  <!-- ===== SECTION II ===== -->
+  <section class="panel" id="section-2">
+    <div class="section-roman">II.</div>
+    <h1 class="section-title">Metaphor as Interface Operation: The Theory of Śaṅkara's Images</h1>
+    <h3>2.1 What Makes a Metaphor Load-Bearing?</h3>
+    <p>Not all metaphors in the bhāṣya are load-bearing. Śaṅkara uses illustrative comparisons throughout his commentaries — the lamp and the eye, the potter and the clay, the web and the spider — that function as pedagogical aids without constituting the philosophical argument itself. These are what classical Indian rhetoric (alaṃkāraśāstra) classifies as <em>upamā</em>: explicit comparisons introduced with a marker of likeness (<em>iva</em>, <em>yathā</em>).</p>
+    <p>The images examined in this paper are philosophically different from illustrative <em>upamā</em>. They are what the present analysis calls load-bearing: they carry philosophical weight that cannot be removed from them without the argument's collapse. The rope-snake image is not a helpful illustration of an error that could equally well be described in purely technical terms; the image <em>is</em> the analysis of error's structure, and it achieves in the reader's buddhi a cognitive operation (the re-categorisation of apparent superimposition) that propositional description alone cannot achieve. These images are, in the technical vocabulary of Indian aesthetics, closer to <em>rūpaka</em> (identification) than <em>upamā</em> (comparison): they work not by saying that Brahman is <em>like</em> the space in a jar but by demonstrating that the space in the jar and the space outside the jar are already and always the same space, and that the apparent division is produced by the attribution (<em>adhyāsa</em>) of the jar's boundaries to the space they contain.</p>
+    <h3>2.2 Adhyāsa: Superimposition as the Error the Metaphors Diagnose</h3>
+    <p>The philosophical key to Śaṅkara's entire metaphoric architecture is the concept of <em>adhyāsa</em> — superimposition, the mistaken attribution of the properties of one thing to another. The Adhyāsabhāṣya (the proem to the Brahmasūtra-Bhāṣya) opens with what is perhaps the most important single paragraph in the Advaita Vedānta corpus: the analysis of the structure of ordinary experience as constituted by the mutual superimposition of Self and non-Self — the appearance of the Self's properties (consciousness, luminosity, immediacy) in the products of Prakṛti, and the appearance of Prakṛti's products' properties (spatial location, temporal change, material character) in the Self.</p>
+
+    <div class="skt-block">
+      युष्मदस्मत्प्रत्ययगोचरयोः विषयविषयिणोस् तमःप्रकाशवद् विरुद्धस्वभावयोः<br/>इतरेतरभावानुपदापन्नयोः इतरेतरधर्माध्यासः सहावस्थानम् अनुपपन्नम्
+    </div>
+    <div class="skt-translit">yuṣmad-asmat-pratyaya-gocarayoḥ viṣaya-viṣayiṇos tamaḥ-prakāśavad viruddha-svabhāvayoḥ · itaretara-bhāvānupadāpannayoḥ itaretara-dharmādhyāsaḥ sahāvasthānam anupapannam</div>
+    <div class="skt-gloss">The mutual superimposition of properties between the object and the subject — between what is indicated by the notions "you" and "I" — which are by nature opposed like darkness and light, cannot be rationally established for things that do not share each other's nature — Adhyāsabhāṣya, Brahmasūtra-Bhāṣya Proem</div>
+
+    <p>Adhyāsa is not merely an intellectual error that correct information can dispel. It is a constitutive feature of ordinary experience — the structure of the empirical subject's relationship to both its own nature and to the phenomenal world. It cannot be dispelled by argument alone, because argument itself takes place within the framework of ordinary experience and therefore within the framework of adhyāsa. This is precisely why the bhāṣya's metaphors are philosophically indispensable: they are instruments capable of dislodging adhyāsa at the level of buddhi's actual operation, not merely at the level of the concepts buddhi processes.</p>
+    <h3>2.3 The Metaphors as Guṇa-Shifting Instruments</h3>
+    <p>Part Three's analysis of the guṇas established that buddhi can operate in sāttvika, rājasika, or tāmasika configurations. The ordinary experiencer's buddhi — operating under adhyāsa — is in a rājasika-tāmasika configuration: it takes the phenomenal world as ultimately real (tamas) and pursues its objects with desire and aversion (rajas). Śaṅkara's metaphors are designed to shift this configuration toward sattva: not by providing new objects for buddhi's attention (which would merely feed the rājasika tendency) but by changing the mode of attention itself. The rope-snake image does not give the reader new information about snakes or ropes; it shifts the reader's buddhi from a mode of operation in which appearances are taken as self-certifying to a mode in which the structure of apparent reality is seen as dependent on a prior, mis-identification.</p>
+    <table class="data-table">
+      <caption>Śaṅkara's Five Principal Metaphors — Interface-Level and Guṇa-Function</caption>
+      <tr><th>Image</th><th>Sanskrit</th><th>Adhyāsa Diagnosed</th><th>Interface Level</th><th>Guṇa Shift Produced</th></tr>
+      <tr><td>Rope and Snake</td><td class="skt-cell">रज्जुसर्पः</td><td>Superimposition of serpent-nature on rope — perceptual error under partial illumination</td><td>Jñānendriya + Manas</td><td>Tamas → Sattva at sense-mind level</td></tr>
+      <tr><td>Mirror and Reflection</td><td class="skt-cell">दर्पणप्रतिबिम्बम्</td><td>Superimposition of reflection on mirror — appearance of face within the reflective surface</td><td>Buddhi</td><td>Rajas → Sattva at discriminative level</td></tr>
+      <tr><td>Dream</td><td class="skt-cell">स्वप्नः</td><td>Superimposition of dream-reality on consciousness — appearance of external world in the waking state</td><td>Antaḥkaraṇa (entire)</td><td>Tamas → Sattva at all inner-instrument levels</td></tr>
+      <tr><td>Tenth Man</td><td class="skt-cell">दशमः</td><td>Superimposition of absence on the one who counts — failure of the subject to recognise itself</td><td>Ahaṃkāra</td><td>Rajas (seeking) → Sattva (recognition)</td></tr>
+      <tr><td>Space in a Jar</td><td class="skt-cell">घटाकाशः</td><td>Superimposition of limitation on space — attribution of the container's boundaries to the contained</td><td>Mahat/Buddhi level</td><td>Tamas (division) → Sattva (non-division)</td></tr>
+    </table>
+  </section>
+
+  <!-- ===== SECTION III ===== -->
+  <section class="panel" id="section-3">
+    <div class="section-roman">III.</div>
+    <h1 class="section-title">The Rope and the Snake: Perceptual Error at the Manas Level</h1>
+    <div class="metaphor-card">
+      <div class="mc-head">
+        <div class="mc-skt">रज्जुसर्पः</div>
+        <div><div class="mc-title">Principal Image · Manas-Level</div><div class="mc-name">The Rope and the Snake</div></div>
+      </div>
+      <div class="mc-body">
+        <p>In twilight or dim light, a coiled rope on the path is mistaken for a snake. The traveller recoils, perhaps cries out, experiences the full phenomenology of fear — all produced by a reality (the snake) that was never there. The rope was always only a rope. The snake was the product of the mind's superimposition (<em>adhyāsa</em>) of snake-properties on the rope. When full light arrives — or when the traveller approaches more closely — the snake vanishes without remainder. Only the rope remains. And the rope was always only the rope: it neither became a snake nor ceased being a snake when the error was corrected, because it was never a snake.</p>
+        <div class="mc-row">
+          <div class="mc-cell"><div class="mcc-label">The Error Diagnosed</div><p>Superimposition of a second thing (snake) on the substrate (rope) due to partial or obscured illumination — the tāmasika condition at the sense-mind level.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Liberation Enacted</div><p>Full illumination reveals the substrate as what it always was. The snake does not cease to exist: it never existed. The rope does not become something new: it was always the rope.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Brahman Analogy</div><p>Brahman is the rope; the phenomenal world (jagat) is the snake-appearance; avidyā is the dim light; jñāna (liberative knowledge) is the full illumination that dissolves the superimposition without creating anything new.</p></div>
+        </div>
+      </div>
+    </div>
+    <h3>3.1 The Rope-Snake and the Structure of Adhyāsa</h3>
+    <p>The rope-snake (<em>rajju-sarpa</em>) image is Śaṅkara's most frequently deployed and most philosophically precise instrument for analysing the structure of <em>adhyāsa</em>. Its precision lies in what it manages to show simultaneously: (1) the error is real as error — the traveller's fear is genuine, the experience of a snake is phenomenologically complete; (2) the substrate is unchanged by the error — the rope is not modified by being mistaken for a snake; (3) the correction requires no creation of anything new — full illumination does not produce the rope, it reveals what was already there; and (4) the error's dissolution leaves no remainder — there is no residue of the snake after the rope is seen clearly.</p>
+    <p>All four of these features map precisely onto the Advaita account of the world's relationship to Brahman. The world's appearance is real as appearance; Brahman is unchanged by being the substrate of the world's appearance; liberation requires no creation of a new relationship between the individual and Brahman, only the clear seeing of what is already the case; and at liberation, there is no residue of the world's apparent independent existence — only Brahman, which was always already all there was.</p>
+    <h3>3.2 The Partial Light: Why Avidyā Is Not Mere Ignorance</h3>
+    <p>The rope-snake image also makes precise a distinction that is crucial to Śaṅkara's entire philosophical project: <em>avidyā</em> (spiritual ignorance, non-knowledge) is not mere absence of information but a positive mis-seeing — a seeing of something (the snake) in place of something else (the rope). The traveller in the dim light does not simply fail to see the rope; the traveller actively sees a snake. This means that the correction of avidyā is not simply the addition of information (the proposition "the snake is actually a rope") but a shift in the mode of perception — what the Yoga tradition calls viveka-khyāti and what Part Three identified as the shift from tāmasika to sāttvika buddhi-function.</p>
+    <blockquote>The snake is not cured by being told about ropes. The snake is cured by light. Śaṅkara's bhāṣya is, among other things, a lamp — a source of philosophical illumination designed not to inform the reader about something they did not know but to illuminate what was always already there and always already seen, though always seen wrongly.<span class="cite">Series A · Editorial Framework</span></blockquote>
+    <h3>3.3 Interface Location: Jñānendriya and Manas</h3>
+    <p>Within Part Three's tattva-hierarchy, the rope-snake error occurs at the level of the jñānendriyas (the sensory organs) and their coordinator manas: it is a perceptual-cognitive error, occurring within the interface at the level at which sensory input meets the mind's categorising and pattern-recognising function. The image therefore targets the reader's attention at precisely this level: it invites the reader's manas to re-categorise its own categorising activity, to notice that its apparently direct perceptions of external reality are themselves dependent on prior acts of identification that can be — and, in the case of Brahman-as-world, systematically are — mistaken.</p>
+
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Reference · Rope-Snake Adhyāsa</div>
+      <div class="mb-skt">अज्ञानतिमिरान्धस्य ज्ञानाञ्जनशलाकया<br/>चक्षुरुन्मीलितं येन तस्मै श्रीगुरवे नमः</div>
+      <div class="mb-translit">ajñāna-timira-andhasya jñānāñjana-śalākayā · cakṣur unmīlitaṃ yena tasmai śrī-gurave namaḥ</div>
+      <div class="mb-trans">"To that blessed Guru who opened the eyes of one blinded by the darkness of ignorance with the collyrium-stick of knowledge — to that one, salutation."</div>
+      <div class="mb-source">Gurvaṣṭaka / traditional Vedāntic invocation</div>
+      <div class="mb-note">The collyrium-stick (añjana-śalākā) applied to the eye is the classical Indian image for the operation the bhāṣya performs: not adding vision but removing the obstruction that prevented clear seeing. The metaphor enacts the rope-snake model: the teacher's instruction does not create the Brahman-vision, it removes the avidyā-blindness that prevented it. The guru's knowledge-collyrium is the light that dissolves the snake-superimposition.</div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION IV ===== -->
+  <section class="panel" id="section-4">
+    <div class="section-roman">IV.</div>
+    <h1 class="section-title">The Mirror and Its Reflection: Buddhi as Reflective Surface</h1>
+    <div class="metaphor-card">
+      <div class="mc-head">
+        <div class="mc-skt">दर्पणप्रतिबिम्बम्</div>
+        <div><div class="mc-title">Principal Image · Buddhi-Level</div><div class="mc-name">The Mirror and the Reflection</div></div>
+      </div>
+      <div class="mc-body">
+        <p>A face appears in a mirror. The reflection is not the face — it is in the mirror, not in the face's spatial location. It is reversed. It is not made of flesh. It cannot speak or eat or think. Yet it is not entirely separate from the face: it arises from the face's proximity to the reflective surface and would not exist without that proximity. The face is unchanged by being reflected — it does not diminish or alter when the image appears in the mirror.</p>
+        <div class="mc-row">
+          <div class="mc-cell"><div class="mcc-label">The Error Diagnosed</div><p>The reflected face appears to be the real face in a different location. The reflection's appearance in the mirror creates the illusion of a second face where there is only one.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Liberation Enacted</div><p>Recognition that the reflection is neither the face nor a separate real entity — it is the face's appearance in the medium of the mirror's surface without any substance of its own.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Brahman Analogy</div><p>Brahman (or ātman, pure consciousness) is the face; buddhi is the mirror; cit-ābhāsa (the reflection of consciousness in buddhi) is the apparent individual self (jīva). The jīva is real as reflection, not as a second consciousness.</p></div>
+        </div>
+      </div>
+    </div>
+    <h3>4.1 Cit-ābhāsa: The Reflection of Consciousness in Buddhi</h3>
+    <p>The mirror-image addresses a philosophical problem that the rope-snake image does not: not the error of taking the phenomenal world as real, but the error of taking the individual self (jīva) as an independently existing consciousness separate from Brahman. Śaṅkara's analysis, developed most fully in his Bṛhadāraṇyaka-Bhāṣya and Upadiśasāhasrī, identifies the apparent individual consciousness not as a fragment of Brahman (which would presuppose Brahman's divisibility and thus violate its non-duality) but as <em>cit-ābhāsa</em>: the reflection of consciousness (cit = Brahman as consciousness, ābhāsa = reflection, appearance, semblance) in the mirror of buddhi.</p>
+    <p>The cit-ābhāsa is real as reflection — it is not a mere nothing, not an illusion in the sense of something entirely without basis. But it is not real as a second consciousness: just as the face's reflection in the mirror is neither a second face nor a part of the first face detached from it, the jīva's consciousness is neither a second Brahman nor a fragment of Brahman separated from the whole. It is Brahman's consciousness appearing within and through the medium of buddhi — real as appearance, not real as independent substance.</p>
+    <h3>4.2 The Mirror's Qualities and Buddhi's Guṇa-Configuration</h3>
+    <p>The mirror-reflection image also encodes Part Three's guṇa-analysis in a remarkably precise way. The clarity of the reflection depends on the quality of the mirror's surface: a clean, polished mirror (sāttvika buddhi) reflects clearly; a dusty or clouded mirror (tāmasika buddhi) reflects poorly or not at all; a distorted or moving mirror (rājasika buddhi) reflects a distorted image. Spiritual practice, on this model, is the polishing of the mirror — the progressive removal of the tamasika cloudedness and rājasika distortion of buddhi's surface until it reflects Brahman's consciousness with maximum clarity. At full clarity (viveka-khyāti), the reflection is so perfect that the distinction between the reflection and the original becomes transparent: the liberated buddhi does not reflect Brahman — it recognises itself as always having been Brahman's own reflection, and Brahman as always having been what it was reflecting.</p>
+    <h3>4.3 The Mirror's Non-Participation</h3>
+    <p>A philosophically crucial feature of the mirror-image is the mirror's own non-participation in what appears within it. The mirror is not changed by the face that appears in it; it does not absorb or contain the face; it is not affected by the face's expressions or movements. This non-participation of the mirror is the structural equivalent of what Part Three identified as Puruṣa's sākṣitva (witness-character): the condition of absolute non-participation that makes the interface possible without the witness becoming implicated in what it witnesses. Buddhi, as the mirror, participates formally in the reflection while remaining materially unchanged; Puruṣa, as the face, is the source of the luminosity that makes reflection possible while remaining unmoved by the appearance it generates.</p>
+    <blockquote>The face does not go into the mirror. The mirror does not go out to meet the face. The reflection is neither the face nor the mirror nor a third thing; it is the relationship between the two, actualised at their interface. This is what the jīva is — not a piece of Brahman, not a separate consciousness, but the relationship between Brahman and the buddhi it illuminates, actualised in the form of reflective self-knowing.<span class="cite">Series A · Editorial Framework</span></blockquote>
+  </section>
+
+  <!-- ===== SECTION V ===== -->
+  <section class="panel" id="section-5">
+    <div class="section-roman">V.</div>
+    <h1 class="section-title">The Dream and the Dreamer: The World as Antaḥkaraṇa-Production</h1>
+    <div class="metaphor-card">
+      <div class="mc-head">
+        <div class="mc-skt">स्वप्नजगत्</div>
+        <div><div class="mc-title">Principal Image · Antaḥkaraṇa-Level</div><div class="mc-name">The Dream and the Waking World</div></div>
+      </div>
+      <div class="mc-body">
+        <p>While dreaming, the dreamer experiences a complete world: space, time, objects, other people, events with causes and consequences, pain and pleasure, fear and joy. This world is entirely real — for the dreamer, from within the dream. Upon waking, the dream-world does not gradually fade: it ceases. The people in it, the spaces in it, the events in it — all were produced by and within the dreamer's own consciousness and had no existence external to it. The dreamer who has just woken up cannot go back to the dream-world to verify that the house in it burned down; the house never existed outside the dream.</p>
+        <div class="mc-row">
+          <div class="mc-cell"><div class="mcc-label">The Error Diagnosed</div><p>Within the dream: taking the dream-world as independently real, external to the dreamer, existing before and after the dream's duration. This is the structure of the waking state's error about the waking world.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Liberation Enacted</div><p>Waking up: the dream-world does not gradually dissolve — it simply ceases upon the recognition that one was always dreaming. So mokṣa: not gradual dissolution of the world but sudden recognition of its nature.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Brahman Analogy</div><p>Brahman is the sleeper whose dreaming produces the waking world. The waking world has the same ontological status as a dream-world: real within its own frame of reference, without independent existence beyond the consciousness that produces it.</p></div>
+        </div>
+      </div>
+    </div>
+    <h3>5.1 The Dream as the Most Philosophically Radical of Śaṅkara's Images</h3>
+    <p>Among Śaṅkara's five principal images, the dream is the most philosophically radical because it operates at the level of the entire antaḥkaraṇa in its subtle-body mode, and because its analogical claim is the most comprehensive: not just that a perceptual error (rope-snake) or a reflective confusion (mirror-reflection) affects the individual's experience, but that the entire waking world — all of space and time and causation and individual identity — has the same ontological structure as a dream. This claim is what Śaṅkara's opponents find most difficult to accept and what his philosophical argument must work hardest to establish.</p>
+    <p>The Māṇḍūkya Upaniṣad provides Śaṅkara with the textual foundation for the dream-image in its analysis of the four states of consciousness: waking (<em>jāgrat</em>), dreaming (<em>svapna</em>), deep dreamless sleep (<em>suṣupti</em>), and the fourth (<em>turīya</em>), which is not a fourth state but the ground from which all three states arise. Śaṅkara's Māṇḍūkya-Bhāṣya (and Gauḍapāda's Māṇḍūkya-Kārikā, which Śaṅkara also comments upon) develops the analogy between dreaming and waking into a full-scale philosophical analysis of the ontological status of phenomenal experience.</p>
+    <h3>5.2 Dṛṣṭi-Sṛṣṭivāda: Creation by Vision</h3>
+    <p>Gauḍapāda's Māṇḍūkya-Kārikā introduces what becomes one of the Advaita tradition's most contested doctrines: <em>dṛṣṭi-sṛṣṭivāda</em>, the view that creation is vision — that the world does not exist independently and then get perceived, but is constituted by the very act of perception. The dream provides the model: in the dream, there is no world first and then a dreamer perceiving it; the world and the perceiving arise together as a single event within consciousness. The dṛṣṭi-sṛṣṭivāda extends this model to the waking state: the waking world and the waking perceiver arise together as a single event within Brahman-consciousness, with no prior independent world.</p>
+
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Reference · The Dream-State and Turīya</div>
+      <div class="mb-skt">ॐ अयमात्मा ब्रह्म</div>
+      <div class="mb-translit">oṃ ayam ātmā brahma</div>
+      <div class="mb-trans">"This Self is Brahman."</div>
+      <div class="mb-source">Māṇḍūkya Upaniṣad 2 · One of the Four Mahāvākyas</div>
+      <div class="mb-note">The Māṇḍūkya's Mahāvākya is uniquely connected to the dream-image because it is the Upaniṣad that most directly analyses the dream state alongside the waking and deep-sleep states, culminating in the turīya — the fourth — which is not a state but the background consciousness that witnesses all states without entering any of them. "This Self" (ayam ātmā) is the consciousness that persists across waking, dreaming, and dreamless sleep — the witness that was present in all three states, identified here as Brahman. The dream-metaphor's liberation-event is the recognition of the turīya as one's actual identity: not the waking self, not the dreaming self, not the deep-sleep self, but the consciousness in which all three arise and cease.</div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION VI ===== -->
+  <section class="panel" id="section-6">
+    <div class="section-roman">VI.</div>
+    <h1 class="section-title">The Tenth Man: Ahaṃkāra's Failure to Count Itself</h1>
+    <div class="metaphor-card">
+      <div class="mc-head">
+        <div class="mc-skt">दशमस्त्वमसि</div>
+        <div><div class="mc-title">Principal Image · Ahaṃkāra-Level</div><div class="mc-name">The Tenth Man</div></div>
+      </div>
+      <div class="mc-body">
+        <p>Ten men cross a river. Upon reaching the other bank, anxious that all have crossed safely, the first man counts: one, two, three… nine. Only nine! One must have drowned! Each man counts in turn, each arriving at nine. All are distraught. A stranger who has been watching the whole time sees their confusion and addresses the first man: "You are the tenth." The man counts again — and this time, suddenly, sees: he had been counting everyone but himself. There were always ten. No one drowned. The tenth was always there — the one who was doing the counting.</p>
+        <div class="mc-row">
+          <div class="mc-cell"><div class="mcc-label">The Error Diagnosed</div><p>The counter's inability to count itself: the subject cannot include itself in any count of objects. The seeker's inability to find the Self as an object of search — because the Self is the subject doing the searching.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Liberation Enacted</div><p>Not discovery of a previously hidden tenth man but recognition of what was always already present as the one doing the seeking. The guru's instruction "You are the tenth" does not create the tenth; it redirects attention.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Brahman Analogy</div><p>The seeker looks for Brahman as an object of spiritual search — and cannot find it, because Brahman is the subject doing the searching. The guru's mahāvākya ("That thou art") redirects attention from the sought to the seeker.</p></div>
+        </div>
+      </div>
+    </div>
+    <h3>6.1 The Structural Peculiarity of the Subject-Object Relation</h3>
+    <p>The tenth man image is Śaṅkara's most precisely targeted instrument for diagnosing the specific error at the ahaṃkāra level: the confusion of the Self with the objects of its cognition, and its consequent failure to recognise itself. The image captures something that no propositional argument can fully convey: that the Self's non-findability as an object is not evidence of its absence but evidence of its nature as the permanent, non-objectifiable subject. You cannot find the Self as an object because you are always already the Self as subject — and the subject is never among the objects it cognises.</p>
+    <p>This is what Śaṅkara's tradition calls the <em>pratyak</em> (inner, immediate) character of Brahman-ātman: it is not an object to be sought but the immediate, self-luminous presence that is always already closer than any object — closer, in the tradition's formulation, than breath, than heartbeat, than the thought that reaches for it. The tenth man's "you are the tenth" is the tradition's model for the guru's delivery of the mahāvākya: not the communication of new information but the redirection of attention from the sought to the seeker.</p>
+    <h3>6.2 The Tenth Man and the Mahāvākya</h3>
+    <p>The tenth man story is the classical Indian narrative model for the operation of the Chandogya Upaniṣad's mahāvākya: <em>tat tvam asi</em> ("That thou art"). The stranger's statement "You are the tenth" (<em>daśamas tvam asi</em>) is a direct formal echo of the mahāvākya's structure: a second-person predication that identifies the hearer with something the hearer has been failing to recognise as themselves. The stranger does not say "There is a tenth man somewhere you haven't looked" — which would set the hearer off on another futile search. The stranger says "You — the one doing the looking — are the one you have been looking for." This is precisely the structure of <em>tat tvam asi</em>: not "Brahman exists somewhere you haven't yet encountered it" but "You — the consciousness now hearing these words — are Brahman."</p>
+    <blockquote>The tenth man is the most philosophically economical of Śaṅkara's images because it does in a single narrative gesture what the Upaniṣads do in volumes: it shows that the seeker and the sought are not two different things waiting to be brought into contact. The problem was not that the tenth man was absent. The problem was that the counter was looking in the wrong direction.<span class="cite">Series A · Editorial Framework</span></blockquote>
+  </section>
+
+  <!-- ===== SECTION VII ===== -->
+  <section class="panel" id="section-7">
+    <div class="section-roman">VII.</div>
+    <h1 class="section-title">Space in a Jar: The Ghaṭākāśa and the Limitlessness of Brahman</h1>
+    <div class="metaphor-card">
+      <div class="mc-head">
+        <div class="mc-skt">घटाकाशः</div>
+        <div><div class="mc-title">Principal Image · Mahat-Level</div><div class="mc-name">The Space in a Jar (Ghaṭākāśa)</div></div>
+      </div>
+      <div class="mc-body">
+        <p>A clay jar contains space. The space inside the jar seems different from the space outside: it is limited, enclosed, separated from the vast open sky. But this appearance of limitation and separation is not the space's own nature — it is the appearance produced by the jar's imposition of its own shape and boundaries on the space it "contains." The space itself is identical everywhere: inside the jar and outside it, in this room and in that room, below the horizon and above it. When the jar breaks, the space that was "inside" does not merge with the space "outside" — there was never any real division for a merger to accomplish.</p>
+        <div class="mc-row">
+          <div class="mc-cell"><div class="mcc-label">The Error Diagnosed</div><p>Attribution of the jar's limitations (its shape, its boundaries, its breakability) to the space the jar contains. The jīva's belief that its consciousness is limited, individual, enclosed within a body — when consciousness is in fact limitless like space.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Liberation Enacted</div><p>Breaking the jar: not the death of the body (which would make liberation unavailable in life) but the recognition that the jar's boundaries were never the space's own. The "merger" is the recognition that division was never real.</p></div>
+          <div class="mc-cell"><div class="mcc-label">The Brahman Analogy</div><p>Brahman is the infinite space (mahākāśa); the individual jīva is the jar-space (ghaṭākāśa); the body-mind complex is the jar; liberation is the recognition that jar-space and sky-space were never two different spaces.</p></div>
+        </div>
+      </div>
+    </div>
+    <h3>7.1 The Ghaṭākāśa as Addressing Individual Multiplicity</h3>
+    <p>Among Śaṅkara's five principal images, the ghaṭākāśa (jar-space) most directly addresses the question that generates the most immediate philosophical difficulty: if Brahman is one and non-dual, how can there be many individual souls (jīvas)? Are they parts of Brahman? Modifications? Fragments? The jar-space image dissolves this question by showing that the apparent multiplicity of individual consciousnesses is structurally analogous to the apparent multiplicity of the space in many different jars: there are many jars, but there is only one space. The many jar-spaces are not many spaces; they are the one space as it appears from the perspective of each jar's interior.</p>
+    <h3>7.2 Vivartavāda: Apparent Modification Without Actual Change</h3>
+    <p>The ghaṭākāśa image provides the experiential basis for understanding Śaṅkara's philosophical doctrine of <em>vivartavāda</em>: the view that the world's relationship to Brahman is one of apparent modification (vivarta) rather than actual transformation (pariṇāma). The potter who makes a pot out of clay produces an actual transformation: the clay genuinely changes its shape and function. But the space that "enters" the pot does not actually change: it merely appears, from within the pot, to be limited and separate. This is the vivartavāda model of the world's relationship to Brahman: the world is Brahman's apparent modification, not its actual transformation. Brahman does not become the world the way clay becomes a pot; it appears as the world the way infinite space appears as jar-space — without any real change in its own nature.</p>
+    <blockquote>The jar does not create a new kind of space by enclosing some of it. The space in the jar is the same space as the sky, seen from inside. Liberation is not moving from inside the jar to outside the sky; there is no inside and outside when it comes to space. Liberation is the dissolution of the idea that there ever was an inside.<span class="cite">Series A · Editorial Framework</span></blockquote>
+  </section>
+
+  <!-- ===== SECTION VIII ===== -->
+  <section class="panel" id="section-8">
+    <div class="section-roman">VIII.</div>
+    <h1 class="section-title">The Pedagogical Sequence: How the Images Work in Order</h1>
+    <h3>8.1 The Five Images as a Structured Progression</h3>
+    <p>The five images are not interchangeable. Each targets a specific interface-level and a specific form of adhyāsa, and they are most effective when deployed in a particular sequence — a sequence that mirrors the tattva-hierarchy's progression from gross to subtle, or (in the liberating direction) from subtle to gross. Śaṅkara does not always deploy them in this sequence within a single text, and different bhāṣyas foreground different images depending on the upaniṣadic context. But the logical sequence — from gross perceptual error through reflective confusion through dreaming to self-misidentification to the fundamental confusion about consciousness's scope — is the sequence that the tradition identifies as the most direct pedagogical path.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Stage 1 · Gross Perceptual Level · Jñānendriyas</div>
+        <div class="tl-title">Rope-Snake — Correcting Perceptual Error</div>
+        <div class="tl-body">The student first encounters the structure of adhyāsa at the most accessible level: the familiar experience of mistaking one thing for another in poor light. This establishes the philosophical category of superimposition as a structural feature of ordinary perception, not an exotic philosophical claim.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Stage 2 · Reflective Level · Buddhi</div>
+        <div class="tl-title">Mirror-Reflection — Correcting Self-Image</div>
+        <div class="tl-body">Having understood superimposition at the perceptual level, the student is now ready for the application to the individual self: the jīva as reflection of Brahman-consciousness in buddhi. This is more subtle because it requires the student to apply the superimposition-analysis to their own sense of being an individual conscious entity.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Stage 3 · Total Experience Level · Antaḥkaraṇa</div>
+        <div class="tl-title">Dream — Correcting World-Reality Error</div>
+        <div class="tl-body">The dream image extends the analysis from the individual self to the entire experiential world: if the jīva is like a reflection, then the jīva's experienced world is like a dream-world — real within its frame of reference, without independent existence outside the consciousness that produces it.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Stage 4 · Identity Level · Ahaṃkāra</div>
+        <div class="tl-title">Tenth Man — Redirecting the Search</div>
+        <div class="tl-body">With the world's dream-status established, the student now faces the most immediate question: but then who am I? The tenth man image prevents the spiralling anxiety of the infinite regress ("if the self I know is unreal, who knows that?") by showing that the answer was always already present in the question: you are what is asking.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Stage 5 · Scope of Consciousness · Mahat</div>
+        <div class="tl-title">Ghaṭākāśa — Releasing Consciousness from Boundaries</div>
+        <div class="tl-body">Having recognised "I am not the individual I thought I was," the final question is: then what is the scope of what I am? The ghaṭākāśa shows that the consciousness now recognising itself as non-individual is not a vague, featureless consciousness but the same consciousness that was always present in the jar — infinite, uncontained, the same everywhere and in everything.</div>
+      </div>
+    </div>
+    <h3>8.2 The Sequence as Inverse Tattva-Ascent</h3>
+    <p>This pedagogical sequence is the inverse of the tattva-hierarchy's downward order of manifestation. The tattva-hierarchy descends from Mahat through ahaṃkāra and the indriyas to the gross elements — from the most transparent interface-product to the most opaque. The pedagogical sequence ascends: beginning from the most accessible, concrete, perceptual level (rope-snake, corresponding to the jñānendriyas) and moving progressively toward the most subtle and fundamental (ghaṭākāśa, corresponding to the Mahat-level of consciousness's own scope). The bhāṣya's metaphoric architecture mirrors the Yoga path's pratiprasava (involution, reverse movement): the return of the manifested tattvas toward their source, enacted through the disciplined application of images rather than through the disciplined application of āsana and prāṇāyāma.</p>
+  </section>
+
+  <!-- ===== SECTION IX ===== -->
+  <section class="panel" id="section-9">
+    <div class="section-roman">IX.</div>
+    <h1 class="section-title">Neti Neti — The Negative Way: Apophatic Architecture</h1>
+    <h3>9.1 The Bṛhadāraṇyaka's Negative Formula</h3>
+    <p>The Bṛhadāraṇyaka Upaniṣad presents the most philosophically rigorous and most theologically demanding teaching about Brahman's nature through a formula that has become the most famous apophatic statement in any philosophical tradition: <em>neti neti</em> — "not this, not this." The formula appears in the Yājñavalkya-Maitreyī dialogue (Bṛhadāraṇyaka 4.5.15) and in several other contexts, and Śaṅkara's commentary on it in his Bṛhadāraṇyaka-Bhāṣya constitutes his most sustained engagement with the limits of linguistic and conceptual reference.</p>
+    <div class="skt-block">
+      स वा एष महानज आत्मा — अजरोऽमरोऽमृतोऽभयो ब्रह्म<br/>न इति न इति — न ह्येतस्मादिति नेत्यन्यत् परमस्ति
+    </div>
+    <div class="skt-translit">sa vā eṣa mahān aja ātmā — ajaro 'maro 'mṛto 'bhayo brahma · na iti na iti — na hy etasmād iti nety anyat param asti</div>
+    <div class="skt-gloss">This great, unborn Self — ageless, deathless, immortal, fearless — is Brahman. Not this, not this — for there is nothing higher than this "not this." — Bṛhadāraṇyaka Upaniṣad 4.5.15</div>
+    <h3>9.2 Neti Neti as Architectural Principle</h3>
+    <p>The <em>neti neti</em> formula is not merely a statement of Brahman's ineffability (a philosophical shrug) but a precise methodological instruction: the method of progressive negation by which every predication attributed to Brahman — every positive characterisation, every conceptual determination — is systematically denied. The negation is not nihilism (the claim that Brahman does not exist) but via negativa: the stripping away of all positive characterisations that would limit Brahman to the domain of what can be characterised, which is the domain of Prakṛti's products.</p>
+    <p>Śaṅkara's reading of <em>neti neti</em> identifies it as the complementary architectural principle to the five positive images: where the images work by installing a new cognitive structure (superimposition → recognition), the negative formula works by dismantling the tendency to install any cognitive structure at all. The images give the buddhi something to work with — a model of what the liberation-event looks like from within experience. The <em>neti neti</em> then takes away even the model, preventing the student from making a new object of the recognition the images have produced.</p>
+    <h3>9.3 The Three Phases of Negation</h3>
+    <p>Śaṅkara's bhāṣya on the <em>neti neti</em> passages identifies three distinct phases of the negation. The first phase negates the grossest identifications: Brahman is not the body, not the senses, not the objects of sense. The second phase negates the subtler identifications: Brahman is not manas, not ahaṃkāra, not buddhi, not even the ānandamaya-kośa (the bliss-sheath). The third phase — the most philosophically demanding — negates the very act of negation itself: the formula <em>neti neti</em> does not establish a position (the position that Brahman cannot be characterised) because that position would itself be a characterisation. The double negation negates the negation: not even "not this" is the final word about Brahman, because "not this" is still a predication, still a doing-something-with-language, still within the domain of manas and buddhi. Brahman's nature exceeds even the method by which it is approached.</p>
+    <blockquote>The most honest thing that can be said about Brahman is not-this, not-this. The most honest thing that can be said about not-this is: not that either. At the point at which the negation negates itself, the bhāṣya falls silent — and in that silence, the student who has followed the argument is in the position in which the argument was always trying to place them: not knowing, not not-knowing, but being what knowing is about.<span class="cite">Series A · Editorial Framework</span></blockquote>
+  </section>
+
+  <!-- ===== SECTION X ===== -->
+  <section class="panel" id="section-10">
+    <div class="section-roman">X.</div>
+    <h1 class="section-title">Language at the Limit: What Śaṅkara Does When the Metaphors Require Critique</h1>
+    <h3>10.1 The Internal Critique of Metaphor</h3>
+    <p>Every metaphor Śaṅkara uses to approach Brahman creates a problem at the level of literal reference: the rope is not actually Brahman; the mirror's face is not actually an individual consciousness; the dreamer is not actually an omniscient creator. If the images are taken as literal descriptions, they generate new confusions at least as serious as those they were deployed to dissolve. Śaṅkara is acutely aware of this and consistently includes, alongside each image's deployment, a systematic critique of the image's limitations — what the tradition calls <em>upādhidoṣa</em>, the defects of the limiting adjunct (upādhi).</p>
+    <h3>10.2 Where Each Image Fails — And Why Its Failure Matters</h3>
+    <p>The rope-snake image fails if pressed literally: in the world, there are actual snakes as well as ropes mistaken for snakes. The image requires the additional premise that the phenomenal world is precisely the case of the "snake" — i.e., there are no actual snakes, only the rope misperceived. The mirror-image fails if pressed: faces are not consciousness; mirrors are not buddhi; the relationship between face and reflection is spatially specified in ways that Brahman-buddhi is not. The dream-image fails if pressed: dream-worlds are produced by individual psyches with limited resources; the waking world, if dream-like, is apparently produced by all individual psyches simultaneously and coherently. The tenth-man image fails if pressed: ten men are finite beings and the tenth man is a determinate individual; Brahman is not a finite individual among others. The ghaṭākāśa-image fails if pressed: space is itself a product of manifestation (ākāśa, the first mahābhūta), whereas Brahman is the ground of even space.</p>
+    <p>Śaṅkara's consistent practice of acknowledging these failures is not a philosophical weakness — it is a sophisticated rhetorical and epistemological strategy. By critiquing each image at the point of its failure, the bhāṣya prevents the student from mistaking the finger for the moon — from taking the pedagogical vehicle (the image) as the destination (Brahman). The internal critique of the image is itself an enactment of <em>neti neti</em>: not even this image, not even this model, not even this very insight. The image was not the truth; it was the path. At the path's end, the path is released.</p>
+    <h3>10.3 Lakṣaṇā: Indirect Indication as the Bhāṣya's Deepest Linguistic Strategy</h3>
+    <p>The Mīmāṃsā-Vedānta tradition distinguishes three primary functions of linguistic meaning: <em>abhidhā</em> (direct, literal denotation), <em>lakṣaṇā</em> (indirect indication, secondary meaning), and <em>vyañjanā</em> (suggestion, resonance). Śaṅkara's bhāṣya operates primarily through lakṣaṇā when approaching the most fundamental statements about Brahman: the word "Brahman" does not literally denote a thing of the kind that words ordinarily denote (a spatially located, temporally bounded, qualitatively characterised entity) — it indicates, indirectly, the ground of all such things, by negating the relevant properties while retaining the word's referential force. The mahāvākyas are the supreme instances of lakṣaṇā: "That thou art" does not literally say that the person addressed is identical to the ultimate reality in the sense that two objects of the same kind are identical; it indicates, indirectly, the identity of the consciousness that underlies both terms, once the limiting adjuncts (upādhis) are recognised as the source of apparent difference.</p>
+  </section>
+
+  <!-- ===== SECTION XI ===== -->
+  <section class="panel" id="section-11">
+    <div class="section-roman">XI.</div>
+    <h1 class="section-title">Synthesis: The Architecture as Functional Whole</h1>
+    <h3>11.1 The Bhāṣya as Integrated Philosophical Instrument</h3>
+    <p>The five images, the negative formula, the internal critique, and the lakṣaṇā-function together constitute what this paper calls Śaṅkara's metaphoric architecture — not a collection of illustrative examples but an integrated philosophical instrument, each element performing a precise function that the other elements depend on. The rope-snake removes the tāmasika opacity at the perceptual level; the mirror-reflection addresses the rājasika confusion at the reflective level; the dream radicalises the analysis to the entire experiential field; the tenth man redirects the seeking away from the sought-as-object and toward the seeker-as-subject; the ghaṭākāśa releases the recognised subject from any residual sense of individuation. The <em>neti neti</em> formula then systematically prevents any of these recognitions from crystallising into a new object of cognition — a new "thing known" within the domain of ordinary knowledge — by negating each in turn. And the lakṣaṇā-function ensures that the words used throughout this sequence carry the weight of what they are pointing toward, even as the images are released.</p>
+    <h3>11.2 The Architecture's Guṇa Profile</h3>
+    <p>Each element of the architecture can be characterised by its guṇa-profile: the images work by increasing sattva at the specific levels they address; the <em>neti neti</em> formula prevents rajas (the grasping tendency) from appropriating the sattva-increase as a new object; the lakṣaṇā-function maintains the connection between the linguistic surface and the experiential reality throughout. The complete architecture is the bhāṣya's attempt to produce, through the Vaikharī medium of written and spoken Sanskrit, the conditions under which the reader's buddhi can arrive at the sāttvika clarity in which viveka-khyāti becomes available: the discriminative knowledge that distinguishes what is self-luminous from what is illuminated, what is witness from what is witnessed, what is Brahman from what is Brahman's appearance.</p>
+    <table class="data-table">
+      <caption>The Five Images, the Negative Formula, and the Lakṣaṇā-Function — Integrated Architecture</caption>
+      <tr><th>Element</th><th>Function</th><th>Interface Level</th><th>Guṇa Operation</th><th>Danger If Isolated</th></tr>
+      <tr><td>Rope-Snake</td><td>Diagnoses perceptual adhyāsa</td><td>Jñānendriyas</td><td>Removes tamas at sense level</td><td>Reduces Brahman to epistemological problem</td></tr>
+      <tr><td>Mirror-Reflection</td><td>Diagnoses self-image adhyāsa</td><td>Buddhi</td><td>Corrects rājasika self-concept</td><td>Makes jīva a mere epiphenomenon</td></tr>
+      <tr><td>Dream</td><td>Radicalises world-status analysis</td><td>Antaḥkaraṇa</td><td>Removes tamas at world-level</td><td>Leads to nihilism about phenomenal world</td></tr>
+      <tr><td>Tenth Man</td><td>Redirects seeking to seeker</td><td>Ahaṃkāra</td><td>Dissolves rājasika seeking</td><td>Creates new object: "the seeker"</td></tr>
+      <tr><td>Ghaṭākāśa</td><td>Releases consciousness from scope-limits</td><td>Mahat</td><td>Removes tamas of individuation</td><td>Makes Brahman an extended substance like space</td></tr>
+      <tr><td>Neti Neti</td><td>Negates each image at its limit</td><td>All levels</td><td>Prevents rājasika appropriation</td><td>Becomes nihilism if negation not itself negated</td></tr>
+      <tr><td>Lakṣaṇā</td><td>Maintains referential force of terms</td><td>Vāk-structure</td><td>Sustains sattva across all operations</td><td>Language loses connection to experience</td></tr>
+    </table>
+  </section>
+
+  <!-- ===== SECTION XII ===== -->
+  <section class="panel" id="section-12">
+    <div class="section-roman">XII.</div>
+    <h1 class="section-title">Forward to Part V: The Bhāṣya Tradition as Lineage</h1>
+    <h3>12.1 What Part Four Has Prepared</h3>
+    <p>Part Four has examined Śaṅkara's metaphoric architecture at the Vaikharī level — the level at which the interface's full self-articulation arrives in specific, historically located, philosophically crafted Sanskrit diction. The five images (rope-snake, mirror, dream, tenth man, ghaṭākāśa), the negative formula (<em>neti neti</em>), and the lakṣaṇā-function together constitute an integrated philosophical instrument designed to produce, in the reader's buddhi, the shift from tāmasika-rājasika to sāttvika orientation that makes the non-dual recognition available as an existential rather than merely intellectual event.</p>
+    <h3>12.2 The Handoff to Part Five</h3>
+    <p>Part Five examines the bhāṣya tradition as lineage — the question of how Śaṅkara's metaphoric architecture is inherited, extended, contested, and transformed in the sub-commentary tradition (Vācaspati Miśra's Bhāmatī, Padmapāda's Pañcapādikā, Sureśvara's Naiṣkarmyasiddhi, Maṇḍana Miśra's Brahmasiddhi, and the subsequent Vivaraṇa and Bhāmatī schools). Part Five will show that the tradition's disagreements — about the locus of avidyā, about the number of individual souls, about the ontological status of the phenomenal world — are not departures from Śaṅkara's metaphoric architecture but extensions of its internal tensions: what happens when the images are pressed beyond the point where Śaṅkara himself pressed them.</p>
+    <div class="ground-note">
+      <div class="gn-label">Three Results from Part IV that Feed into Part V</div>
+      <p><strong>1. The Architecture's Internal Tensions.</strong> The five images are mutually complementary but not mutually identical in their philosophical implications. The Bhāmatī school develops primarily from the mirror-reflection image's implications (making avidyā a property of jīva); the Vivaraṇa school develops primarily from the ghaṭākāśa image's implications (making avidyā a property of Brahman as reflected in māyā). Part Five traces these divergences to their roots in the architecture.</p>
+      <p><strong>2. The Role of the Guru's Voice.</strong> The tenth-man image establishes the guru's mahāvākya-delivery as the architectural keystone of the liberation-event. Part Five examines how the sub-commentary tradition theorises the guru's function — whether liberation is produced by the mahāvākya itself (śabda-janya-jñāna) or by the existential event the mahāvākya occasions.</p>
+      <p style="margin-bottom:0"><strong>3. The Extended Mantra Studies.</strong> Sections XIII–XVII of the present paper provide the mantra and practice case studies that Part Five will draw on for its analysis of how the bhāṣya tradition's philosophical divergences are reflected in — and partially determined by — the different mantra traditions with which the Advaita lineages are associated.</p>
+    </div>
+    <div class="divider">❖ ❖ ❖</div>
+    <blockquote>Part Four arrived at the word. Part Five asks: whose word? In whose mouth did it first sound, and what happened to it when it passed into other mouths, other traditions, other centuries, other disputes? The word does not stay where it was first spoken. That is both the tradition's vulnerability and its vitality.<span class="cite">Series A · Editorial Framework</span></blockquote>
+  </section>
+
+  <!-- ===== SECTION XIII — MANTRA CASE STUDIES ===== -->
+  <section class="panel new-panel" id="section-13">
+    <div class="section-roman">XIII.</div>
+    <h1 class="section-title">Mantra Case Studies — The Core Eight: Phonological Encoding of the Metaphoric Architecture</h1>
+    <div class="ground-note violet">
+      <div class="gn-label">Extended Study I of V · Research Infrastructure</div>
+      <p style="margin-bottom:0">Section XIII provides comprehensive case studies of eight primary mantras whose phonological structure, grammatical form, and contemplative function encode, at the level of sonic and linguistic form, the metaphoric architecture developed in Sections I–XII. These mantras constitute the oral archive of what the bhāṣya expresses in written prose — the living phonological enactment of the same interface-operations that Śaṅkara performs through his five images. Each case study provides: Devanāgarī text, IAST transliteration, word-by-word gloss, translation, source citation, phonological analysis, interface-level, metaphoric-architecture connection, and research notes.</p>
+    </div>
+
+    <!-- MANTRA 1 -->
+    <h3>13.1 OM (Praṇava) — The Interface as Single Phoneme</h3>
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Case Study 1 · The Praṇava</div>
+      <div class="mb-skt">ॐ</div>
+      <div class="mb-translit">oṃ</div>
+      <div class="mb-trans">The Praṇava — the primordial sound, beginning and end of all Vedic recitation</div>
+      <div class="mb-source">Māṇḍūkya Upaniṣad 1; Yoga-Sūtra 1.27; Bhagavadgīṭā 17.23–24; Taittirīya Upaniṣad 1.8</div>
+      <div class="mb-note"><strong>Phonological Analysis:</strong> OM is phonologically constituted by three phonemes (a + u + m) and a fourth element (the silence that follows). In the Māṇḍūkya's analysis: A (अ) = the waking state (viśva, gross experience), U (उ) = the dreaming state (taijasa, subtle experience), M (म) = the deep-sleep state (prājña, causal experience), and the Silence = turīya, the fourth, which is not a state but the ground of all three. The anusvāra (ṃ) — the nasal resonance that extends the M — is itself a phonological enactment of the transition from manifest sound to silence, from Vaikharī toward Parā. <strong>Interface Level:</strong> All four levels simultaneously — the praṇava is the only sound that the tradition identifies as present at all four vāk-levels at once. <strong>Metaphoric Architecture Connection:</strong> The praṇava's phonological structure enacts the ghaṭākāśa-image at the level of pure sound: the three phonemes are like three jar-spaces, and the silence is like the infinite sky-space in which they all arise and cease. The M's dissolution into silence is the jar's dissolution — the recognition that jar-space was always sky-space. <strong>Research Note:</strong> The Māṇḍūkya Upaniṣad is the only Upaniṣad entirely devoted to a single syllable. Gauḍapāda's Kārikā on it constitutes the most philosophically developed analysis of the praṇava's structural implications for the relationship between the states of consciousness and the nature of Brahman.</div>
+    </div>
+
+    <!-- MANTRA 2 -->
+    <h3>13.2 Gāyatrī Mantra — The Interface as Solar Contemplation</h3>
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Case Study 2 · The Gāyatrī</div>
+      <div class="mb-skt">ॐ भूर्भुवः स्वः<br/>तत् सवितुर् वरेण्यं<br/>भर्गो देवस्य धीमहि<br/>धियो यो नः प्रचोदयात्</div>
+      <div class="mb-translit">oṃ bhūr bhuvaḥ svaḥ · tat savitur vareṇyaṃ · bhargo devasya dhīmahi · dhiyo yo naḥ pracodayāt</div>
+      <div class="mb-trans">"OM. Earth, atmosphere, heaven. We contemplate that excellent radiance of the divine Savitṛ — may he impel our intellects."</div>
+      <div class="mb-source">Ṛgveda 3.62.10 (Viśvāmitra); repeated in Yajurveda, Sāmaveda; central to Vedic daily practice (sandhyāvandana)</div>
+      <div class="mb-note"><strong>Phonological Analysis:</strong> The three vyāhṛtis (bhūr, bhuvaḥ, svaḥ) correspond to the three worlds — gross (earth), subtle (atmosphere), and causal (heaven) — which map precisely onto the three states of consciousness and onto the three lower vāk-levels (Vaikharī, Madhyamā, Paśyantī). The gāyatrī meter (24 syllables in three pādas of 8) is the most auspicious Vedic meter, associated with light and vision. <em>Dhīmahi</em> (we contemplate) deploys the root <em>dhī-</em> (to think, contemplate, illumine) which is etymologically connected to buddhi — the faculty whose clarity is the aim of the Gāyatrī's daily recitation. <strong>Interface Level:</strong> Madhyamā ascending toward Paśyantī — the mantra explicitly addresses the luminous (bhargo) function of the divine solar intelligence (Savitṛ), asking it to impel (pracodayāt) the buddhi (dhiyas) of the practitioner. <strong>Metaphoric Architecture Connection:</strong> The Gāyatrī enacts the mirror-image: Savitṛ is the self-luminous original (the face), the practitioner's buddhi is the mirror, and the daily recitation is the polishing of the mirror — the progressive purification of the reflective surface so that Savitṛ's light can be received without distortion. <strong>Research Note:</strong> Śaṅkara's commentary on the Chāndogya Upaniṣad 3.12 (the extended Gāyatrī chapter) is among his most important sustained analyses of the relationship between Vedic mantra-practice and the Advaita philosophical framework. The chapter identifies the Gāyatrī with Brahman itself — the mantra is not merely addressed to Brahman but is an articulation of Brahman's own nature.</div>
+    </div>
+
+    <!-- MANTRA 3 -->
+    <h3>13.3 Mahāmṛtyuñjaya — The Interface at the Boundary of Life and Death</h3>
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Case Study 3 · Mahāmṛtyuñjaya</div>
+      <div class="mb-skt">ॐ त्र्यम्बकं यजामहे<br/>सुगन्धिं पुष्टिवर्धनम् ।<br/>उर्वारुकमिव बन्धनात्<br/>मृत्योर्मुक्षीय माऽमृतात्</div>
+      <div class="mb-translit">oṃ tryambakaṃ yajāmahe · sugandhiṃ puṣṭivardhanam · urvārukam iva bandhanāt · mṛtyor mukṣīya mā 'mṛtāt</div>
+      <div class="mb-trans">"We worship the three-eyed one who increases fragrance and nourishment; may I be released from death as the cucumber from its vine — not from immortality."</div>
+      <div class="mb-source">Ṛgveda 7.59.12 (Vasiṣṭha); Yajurveda 3.60; central mantra of Śiva-worship and healing traditions</div>
+      <div class="mb-note"><strong>Phonological Analysis:</strong> The mantra's central metaphor — the cucumber (<em>urvārukam</em>) separating naturally from its vine at maturity — is one of the most precise images of liberation-as-natural-release (rather than liberation-as-escape) in the entire Vedic corpus. The cucumber does not break free by force; it releases when it is ripe. The three-eyed Śiva (<em>tryambaka</em>) is the deity whose third eye (the eye of jñāna, knowledge) destroys death by seeing beyond it — the eye that corresponds, in the Tantric cakra system, to the Ājñā cakra. <strong>Interface Level:</strong> Viśuddhi-Ājñā transition — the mantra operates at the boundary between the throat's linguistic/expressive function and the third-eye's discriminative/liberative function. The "fragrance" (<em>sugandhi</em>) that Śiva increases is the sattva-quality at this boundary-level. <strong>Metaphoric Architecture Connection:</strong> The cucumber-vine image is a variant of the rope-snake's dissolution: just as the snake vanishes when the light reveals the rope, the death-condition dissolves when Śiva's three-eyed vision reveals immortality. The crucial addition is the phrase <em>mā 'mṛtāt</em> — "not from immortality" — which specifies that liberation is not a release from life but from the ignorance that makes life appear as a passage toward death. <strong>Research Note:</strong> The Mahāmṛtyuñjaya is among the most important healing mantras in the Āyurvedic tradition, used not only for spiritual liberation but for physical recovery — demonstrating that the tradition does not divide the healing of the body from the healing of the misidentification that underlies the fear of death.</div>
+    </div>
+
+    <!-- MANTRA 4 -->
+    <h3>13.4 Puruṣasūkta — The Interface as Cosmic Body</h3>
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Case Study 4 · Puruṣasūkta (Selected Verses)</div>
+      <div class="mb-skt">सहस्रशीर्षा पुरुषः सहस्राक्षः सहस्रपात् ।<br/>स भूमिं विश्वतो वृत्त्वा अत्यतिष्ठद् दशाङ्गुलम् ॥<br/>पुरुष एवेदं सर्वं यद् भूतं यच् च भाव्यम् ।<br/>उतामृतत्वस्येशानो यद् अन्नेनातिरोहति ॥</div>
+      <div class="mb-translit">sahasra-śīrṣā puruṣaḥ sahasrākṣaḥ sahasra-pāt · sa bhūmiṃ viśvato vṛtvā atyatiṣṭhad daśāṅgulam · puruṣa evedaṃ sarvaṃ yad bhūtaṃ yac ca bhāvyam · utāmṛtatvasyeśāno yad annenātirahati</div>
+      <div class="mb-trans">"Thousand-headed is Puruṣa, thousand-eyed, thousand-footed. Having pervaded the earth on all sides, he stands ten fingers beyond it. Puruṣa alone is all this — what has been and what will be. And he is the lord of immortality, whatever grows beyond food."</div>
+      <div class="mb-source">Ṛgveda 10.90; Yajurveda (Vājasaneyī Saṃhitā) 31; foundational to Vedāntic cosmology and to brāhmaṇical ritual theory</div>
+      <div class="mb-note"><strong>Phonological Analysis:</strong> The Puruṣasūkta's hyperbolic cosmological imagery ("thousand-headed," "ten fingers beyond the earth") is not poetic exaggeration but a precise linguistic strategy for approaching what the Vedāntic tradition calls <em>viśvātman</em> (the Self of the universe): an entity that exceeds any finite characterisation but must be approached through finite language. The ten-fingers-beyond (<em>daśāṅgulam</em>) figure anticipates the ghaṭākāśa image: Puruṣa pervades the jar completely and extends beyond it into the infinite sky. <strong>Interface Level:</strong> The sūkta operates simultaneously at all four vāk-levels — its recitation is a Vaikharī enactment of the Paśyantī-level apprehension of the Puruṣa as the ground of all manifestation. <strong>Metaphoric Architecture Connection:</strong> The Puruṣasūkta provides the cosmological backstory for all five of Śaṅkara's images: Puruṣa is the substrate (the rope) on which the world is superimposed; the reflected light in which the world appears (the mirror); the dreamer whose dreaming produces the waking world; the one who counts and was always already the tenth; the sky-space that the jar-space was always already identical with. <strong>Research Note:</strong> The Puruṣasūkta's verse "Puruṣa alone is all this" (puruṣa evedaṃ sarvam) is one of the Ṛgveda's most direct anticipations of the Upaniṣadic non-dual teaching and is cited by Śaṅkara across multiple bhāṣyas as Vedic testimony (śruti-pramāṇa) for the Advaita position.</div>
+    </div>
+
+    <!-- MANTRA 5 -->
+    <h3>13.5 Śāntimantra (Bṛhadāraṇyaka) — The Interface as Fullness</h3>
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Case Study 5 · The Pūrṇam Śāntimantra</div>
+      <div class="mb-skt">ॐ पूर्णमदः पूर्णमिदं पूर्णात् पूर्णमुदच्यते ।<br/>पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते ॥<br/>ॐ शान्तिः शान्तिः शान्तिः</div>
+      <div class="mb-translit">oṃ pūrṇam adaḥ pūrṇam idaṃ pūrṇāt pūrṇam udacyate · pūrṇasya pūrṇam ādāya pūrṇam evāvaśiṣyate · oṃ śāntiḥ śāntiḥ śāntiḥ</div>
+      <div class="mb-trans">"That is full; this is full. From fullness, fullness proceeds. Taking fullness from fullness, fullness alone remains. OM. Peace. Peace. Peace."</div>
+      <div class="mb-source">Invocatory verse of the Bṛhadāraṇyaka Upaniṣad (Śukla Yajurveda); also Īśā Upaniṣad; attributed to Pippalāda tradition</div>
+      <div class="mb-note"><strong>Phonological Analysis:</strong> The mantra's most extraordinary feature is its mathematical precision: fullness minus fullness equals fullness. This is not arithmetic; it is the expression of a logical property of infinity. Infinity minus infinity is still infinity — because infinity is not a large quantity of which portions can be subtracted but a character that belongs to Brahman absolutely, regardless of what appears to proceed from it. The threefold <em>śānti</em> (peace) at the close addresses the three types of obstacle (ādhyātmika, ādhibhautika, ādhidaivika — obstacles from self, from other beings, from cosmic forces) in one sound. <strong>Interface Level:</strong> Parā — this mantra is one of the rare instances in which the tradition's language approaches the Parā level, the level of pure potential prior to sequential differentiation. It says the same thing three times (<em>pūrṇam adaḥ, pūrṇam idaṃ, pūrṇam eva</em>) without addition — not elaborating but deepening. <strong>Metaphoric Architecture Connection:</strong> The Pūrṇam mantra is the ghaṭākāśa image in its most condensed mathematical form: jar-space taken from sky-space leaves sky-space. The world taken from Brahman leaves Brahman. Liberation taken from the individual leaves the individual — as Brahman. <strong>Research Note:</strong> Śaṅkara's commentary on the Īśā Upaniṣad, which also begins with this mantra, is among his most philosophically concentrated bhāṣyas. His reading of <em>pūrṇam</em> (full, complete, infinite) as a technical term for Brahman's nature — as distinct from <em>ananta</em> (endless) or <em>vibhu</em> (pervading) — establishes the precise logical content of the image: infinity is not magnitude but a logical character.</div>
+    </div>
+
+    <!-- MANTRA 6 -->
+    <h3>13.6 Asato Mā — The Interface as Movement from Bondage to Liberation</h3>
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Case Study 6 · Asato Mā Śāntimantra</div>
+      <div class="mb-skt">ॐ असतो मा सद् गमय ।<br/>तमसो मा ज्योतिर् गमय ।<br/>मृत्योर् माऽमृतं गमय ।<br/>ॐ शान्तिः शान्तिः शान्तिः</div>
+      <div class="mb-translit">oṃ asato mā sad gamaya · tamaso mā jyotir gamaya · mṛtyor mā 'mṛtaṃ gamaya · oṃ śāntiḥ śāntiḥ śāntiḥ</div>
+      <div class="mb-trans">"From non-being, lead me to being. From darkness, lead me to light. From death, lead me to immortality. OM. Peace. Peace. Peace."</div>
+      <div class="mb-source">Bṛhadāraṇyaka Upaniṣad 1.3.28; among the most widely recited Vedic peace prayers</div>
+      <div class="mb-note"><strong>Phonological Analysis:</strong> The three petitions present an ascending triad: ontological (asat → sat), epistemological (tamas → jyotis), and existential (mṛtyu → amṛta). This triad maps exactly onto the guṇa-gradient: tamas (darkness, asat, death) → sattva (light, sat, immortality), with the movement from one to the other being the Yoga path's transformation of buddhi. The first person singular implicit in <em>mā</em> (me) is significant: this is a petition made by the individual consciousness, acknowledging its own condition of limitation and directing its attention toward the three transformations. <strong>Interface Level:</strong> Madhyamā → Paśyantī movement — the mantra articulates at the Madhyamā level (sequential, propositional, first-person petition) the movement toward Paśyantī (light, being, immortality). <strong>Metaphoric Architecture Connection:</strong> The three petitions encode the five metaphors' transformative operations: from asat to sat = rope-snake (from false snake to true rope); from tamas to jyotis = mirror-metaphor (from dusty mirror to polished reflection); from mṛtyu to amṛta = dream-metaphor (from dream-reality to waking recognition); and the movement as a whole = tenth man and ghaṭākāśa (from seeking to recognition, from limited to infinite). <strong>Research Note:</strong> Śaṅkara's Bṛhadāraṇyaka-Bhāṣya commentary on 1.3.28 distinguishes sat (ontological reality, Brahman) from asat (non-being, the rope-snake's apparent snake) and identifies jyotis (light) as the self-luminosity of ātman — Puruṣa's svaprakāśatva. The mantra is therefore not a prayer for three separate boons but for the single recognition articulated in three complementary formulations.</div>
+    </div>
+
+    <!-- MANTRA 7 -->
+    <h3>13.7 Śiva Pañcākṣara — Five Syllables of Non-Dual Reality</h3>
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Case Study 7 · Namaḥ Śivāya (Pañcākṣara)</div>
+      <div class="mb-skt">ॐ नमः शिवाय</div>
+      <div class="mb-translit">oṃ namaḥ śivāya</div>
+      <div class="mb-trans">"OM. Salutation to Śiva (the auspicious, the benevolent, the self)."</div>
+      <div class="mb-source">Kṛṣṇa Yajurveda, Taittirīya Saṃhitā 4.5 (the Śrī Rudram, eighth anuvāka); core mantra of Śaiva worship across all traditions</div>
+      <div class="mb-note"><strong>Phonological Analysis:</strong> The five syllables Na-Ma-Śi-Vā-Ya are assigned, in the Śaiva Āgamic tradition, to the five elements (earth, water, fire, air, ether) and to the five cakras from Mūlādhāra through Viśuddhi — making the pañcākṣara a phonological traversal of the entire embodied interface from gross to subtle. <em>Namaḥ</em> (salutation, literally "not mine" — na + mama) is the act of releasing the ahaṃkāra's appropriation: the tenth-man image in two syllables. <em>Śivāya</em> (to Śiva, the auspicious) is the ghaṭākāśa's destination: the infinite in which the individual's jar dissolves. <strong>Interface Level:</strong> Full tattva-traversal — each of the five syllables corresponds to one of the five mahābhūtas and therefore to one of the five cakra levels through which the Kuṇḍalinī ascends. The mantra's recitation is a sequential phonological traversal of the interface from Vaikharī (the gross sound Na-Ma-Śi-Vā-Ya) through Madhyamā (the sequential mental form) through Paśyantī (the pre-sequential gestalt of Śiva's nature) toward Parā (the silence in which the name ceases). <strong>Metaphoric Architecture Connection:</strong> The <em>namaḥ</em> (not-mine) performs the tenth-man's redirection at the level of sound: the one who says "not mine" releases the ahaṃkāra's claim to what the mantra is about, making room for the recognition that what the mantra is about — Śiva — is what the sayer always already was. <strong>Research Note:</strong> The Śrī Rudram (Taittirīya Saṃhitā 4.5–4.7), the liturgical context from which the pañcākṣara is drawn, is among the most extensively commented-upon Vedic texts in the Śaiva tradition. Śaṅkara himself composed the Śivamānasapūjā and several other Śaiva hymns demonstrating that his Advaita framework was not antagonistic to Śiva-devotion but located it within the framework of the bhāṣya's philosophical architecture.</div>
+    </div>
+
+    <!-- MANTRA 8 -->
+    <h3>13.8 Haṃsa Mantra — The Interface as Breath</h3>
+    <div class="mantra-block">
+      <div class="mb-label">Mantra Case Study 8 · The Ajapā-Gāyatrī</div>
+      <div class="mb-skt">हंस-सः / सो-ऽहम्</div>
+      <div class="mb-translit">haṃsa-saḥ / so 'ham</div>
+      <div class="mb-trans">"He is the swan / That I am" — the breath's natural mantra: ham (exhalation) + sa (inhalation)</div>
+      <div class="mb-source">Śiva Sūtras 3.27; Vijñānabhairava 155; Haṃsopaniṣad; implicit in Kaṭha Upaniṣad 2.2.15</div>
+      <div class="mb-note"><strong>Phonological Analysis:</strong> The Haṃsa mantra is unique among mantras in being designated <em>ajapā-gāyatrī</em> — the prayer recited without recitation. It is the natural sound of breathing: the outgoing breath produces the aspirate <em>ha</em> followed by the nasal resonance <em>m</em> (<em>ham</em>); the incoming breath produces the sibilant <em>sa</em>. Every living being recites this mantra 21,600 times daily — without knowing, without intention, simply by breathing. The mantra's reversal — <em>so 'ham</em> ("That I am") — is the mahāvākya in breath form: what the body does unconsciously, the practitioner makes conscious in meditation on the breath. <em>Ha</em> is Śiva (the exhalation, the movement into manifestation, the outgoing Śakti); <em>sa</em> is Śakti (the inhalation, the return, the incoming power). <em>Haṃsa</em> also means "swan" — the vehicle of Brahma and of Sarasvatī, associated in the Vedāntic tradition with the discriminative capacity (viveka) to separate the milk of consciousness from the water of matter. <strong>Interface Level:</strong> All four levels — the ajapā-gāyatrī is present at every level simultaneously, because breath is the immediate biological expression of the Spanda doctrine's expansion-contraction (unmeṣa-nimeṣa). <strong>Metaphoric Architecture Connection:</strong> The Haṃsa mantra is the dream-metaphor's complement: where the dream shows that the waking world has the structure of a dream, the Haṃsa shows that the dreaming-and-waking is happening in the context of a breathing that is itself already the self-declaration of the Absolute — "That I am" — occurring 21,600 times per day without the practitioner's awareness. Liberation, on this model, is simply the awakening to what was already happening. <strong>Research Note:</strong> The Haṃsopaniṣad (a minor Upaniṣad of the Atharva Veda tradition) provides the most extended analysis of the ajapā-gāyatrī's metaphysical implications. The Vijñānabhairava's verse 155 identifies the awareness of the breath's natural mantra as itself a complete contemplative practice: no additional technique is required once the practitioner attends, in the gap between exhalation and inhalation, to the silence that is the turīya behind all breathing.</div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION XIV — MAHĀVĀKYA ANALYSIS ===== -->
+  <section class="panel new-panel" id="section-14">
+    <div class="section-roman">XIV.</div>
+    <h1 class="section-title">Mahāvākya Analysis: The Four Great Sayings as Architectural Keystones</h1>
+    <div class="ground-note violet">
+      <div class="gn-label">Extended Study II of V</div>
+      <p style="margin-bottom:0">The four Mahāvākyas (Great Sayings) are the philosophical and linguistic keystones of the Vedāntic tradition — the four Upaniṣadic sentences that, in Śaṅkara's reading, constitute the direct scriptural testimony for the non-dual identity of ātman and Brahman. Each mahāvākya is associated with one of the four Vedas, one of the four principal Advaita monasteries (maṭhas) established by Śaṅkara, and one of the four primary pedagogical contexts in the liberation-path. This section provides a comprehensive case-study analysis of each.</p>
+    </div>
+
+    <table class="data-table">
+      <caption>The Four Mahāvākyas — Source, Monastery, Pedagogical Context</caption>
+      <tr><th>Mahāvākya</th><th>Sanskrit</th><th>Source</th><th>Veda</th><th>Maṭha</th><th>Function</th></tr>
+      <tr><td>Prajñānam Brahma</td><td class="skt-cell">प्रज्ञानं ब्रह्म</td><td>Aitareya Upaniṣad 3.3</td><td>Ṛgveda</td><td>Govardhana (Purī)</td><td>Defining — Brahman characterised as consciousness</td></tr>
+      <tr><td>Aham Brahmāsmi</td><td class="skt-cell">अहं ब्रह्मास्मि</td><td>Bṛhadāraṇyaka 1.4.10</td><td>Yajurveda</td><td>Śṛṅgeri</td><td>First-Person Realisation — "I am Brahman"</td></tr>
+      <tr><td>Tat Tvam Asi</td><td class="skt-cell">तत् त्वम् असि</td><td>Chāndogya 6.8.7</td><td>Sāmaveda</td><td>Dvārakā</td><td>Second-Person Transmission — the guru's delivery</td></tr>
+      <tr><td>Ayam Ātmā Brahma</td><td class="skt-cell">अयम् आत्मा ब्रह्म</td><td>Māṇḍūkya 2</td><td>Atharvaveda</td><td>Jyotirmaṭh (Badrī)</td><td>Third-Person Declaration — "This Self is Brahman"</td></tr>
+    </table>
+
+    <h3>14.1 Prajñānam Brahma — Consciousness Is Brahman</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">MV·I</span><span class="cs-title">Prajñānam Brahma</span><span class="cs-sub">Aitareya Upaniṣad 3.3 · Ṛgveda · Defining Mahāvākya</span></div>
+      <div class="cs-body">
+        <p>The Aitareya Upaniṣad's mahāvākya identifies Brahman through its most accessible positive characterisation: <em>prajñānam</em> (consciousness, wisdom, knowing). The defining mahāvākya functions differently from the other three: it does not make an identity-claim (Brahman = this specific thing) but a characterisation-claim (Brahman's nature is consciousness). This characterisation is not, however, a limitation: prajñāna is not one property among others but the ground of all properties — consciousness is what makes any predication possible at all.</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">Interface Level</div><p>Mahat/Buddhi — the prajñāna-characterisation addresses the interface at its most luminous product, the level at which Puruṣa's self-luminosity is most directly accessible through Prakṛti's products.</p></div>
+          <div class="cs-cell"><div class="csc-label">Metaphoric Architecture Link</div><p>Mirror-Image: prajñāna is the face (the original); buddhi is the mirror; the individual's apparent consciousness is the reflection. The mahāvākya establishes that the original (the face) is what Brahman is — not the reflection.</p></div>
+          <div class="cs-cell"><div class="csc-label">Śaṅkara's Reading</div><p>Śaṅkara's Aitareya-Bhāṣya emphasises that prajñāna here refers to the self-luminous consciousness that is its own object — not the relational cognition (viṣayī-jñāna) of ordinary experience, but the pure witness-consciousness that underlies all relational cognition.</p></div>
+          <div class="cs-cell"><div class="csc-label">Research Note</div><p>The Aitareya Upaniṣad's full context (chapters 1–3) traces the evolution of consciousness from primordial Being through cosmic creation to individual birth and then to prajñāna's recognition — a micro-cosmological narrative that prefigures the Puruṣasūkta's cosmic-body imagery.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>14.2 Aham Brahmāsmi — I Am Brahman</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">MV·II</span><span class="cs-title">Aham Brahmāsmi</span><span class="cs-sub">Bṛhadāraṇyaka Upaniṣad 1.4.10 · Yajurveda · First-Person Realisation</span></div>
+      <div class="cs-body">
+        <p>The Bṛhadāraṇyaka's mahāvākya is the tradition's most direct first-person formulation of the non-dual recognition: the realised sage speaks from the position of recognition and declares the identity that has been achieved. It is not a metaphysical proposition about Brahman (as if Brahman were a third-person object being described) but a first-person declaration of what the speaker now knows themselves to be.</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">Interface Level</div><p>Ahaṃkāra dissolving into Mahat — the "I" (aham) of ordinary ahaṃkāra-identity makes its final predication and in doing so transcends itself: the I that says "I am Brahman" is not the ordinary I but the consciousness that was always Brahman speaking from within the ordinary I's recognition of its own nature.</p></div>
+          <div class="cs-cell"><div class="csc-label">Metaphoric Architecture Link</div><p>Tenth Man: the first-person declaration "I am Brahman" is structurally identical to the tenth man's recognition "I am the tenth." In both cases, what was sought as an object is recognised as the subject doing the seeking. The declaration does not create a new fact; it acknowledges what was always the case.</p></div>
+          <div class="cs-cell"><div class="csc-label">Śaṅkara's Reading</div><p>In the Bṛhadāraṇyaka-Bhāṣya, Śaṅkara takes the verse in its full context (Bṛhadāraṇyaka 1.4.10): "In the beginning, this was Brahman alone, one only. Being one, it did not fully develop. It then projected, as a supreme creation, the kṣatra class… Therefore nothing is higher than kṣatra. Hence the brāhmaṇa worships the kṣatriya… It knew itself as 'I am Brahman' (aham brahmāsmi). Therefore it became the All." The context establishes that the "I" who declares "I am Brahman" is not a particular individual but consciousness itself arriving at self-recognition.</p></div>
+          <div class="cs-cell"><div class="csc-label">Research Note</div><p>The Yājñavalkya dialogues of the Bṛhadāraṇyaka constitute the most extensive and philosophically sophisticated exploration of the Aham Brahmāsmi recognition in the Upaniṣadic corpus. Yājñavalkya's dialogue with Maitreyī (2.4, 4.5) is the closest the tradition comes to showing the mahāvākya being "delivered" in a live teaching context — the model for the guru's mahāvākya-transmission that becomes central to Advaita pedagogy.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>14.3 Tat Tvam Asi — That Thou Art</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">MV·III</span><span class="cs-title">Tat Tvam Asi</span><span class="cs-sub">Chāndogya Upaniṣad 6.8.7 (and 8 further occasions) · Sāmaveda · Transmission Mahāvākya</span></div>
+      <div class="cs-body">
+        <p>The Chāndogya's mahāvākya is the tradition's most debated and most analysed philosophical sentence. It is repeated nine times across the sixth chapter of the Chāndogya by Uddālaka Āruṇi to his son Śvetaketu — each time following a different illustration of the identity of the finite and the infinite. The mahāvākya is a second-person sentence: "That" (tat — the ground of the universe, the subtle essence that is "all this") "thou art" (tvam asi — the student, Śvetaketu, who thought himself separate). It is the guru's delivery to the student — the stranger's "You are the tenth" in its most philosophically charged formulation.</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">The Lakṣaṇā Analysis</div><p>Śaṅkara's analysis of <em>tat tvam asi</em> turns on the interpretation of <em>tat</em> and <em>tvam</em> through lakṣaṇā (indirect indication) rather than abhidhā (direct denotation). Taken literally, "that" (Brahman, the ground of the universe) and "thou" (Śvetaketu, a finite individual) are apparently contradictory: Brahman is infinite, Śvetaketu is finite. The sentence cannot mean literal identity of two separately defined things. Through lakṣaṇā, what is indicated indirectly is the identity of the consciousness that underlies both terms, once the limiting adjuncts (upādhis) that make Brahman appear as "that" and Śvetaketu appear as "thou" are recognised as not belonging to either term's essential nature.</p></div>
+          <div class="cs-cell"><div class="csc-label">Metaphoric Architecture Link</div><p>The tenth man + ghaṭākāśa combined: "thou" is the jar; "that" is the sky; "thou art that" is the recognition that jar-space = sky-space. But the tenth-man dimension is equally essential: the student who hears the sentence is the one who has been looking for "that" as an external object — and the sentence redirects: you are what you were looking for.</p></div>
+          <div class="cs-cell"><div class="csc-label">The Nine Illustrations</div><p>Uddālaka's nine repetitions of the mahāvākya follow nine different illustrations: the merging of rivers into the ocean, the merging of bees' honey into undifferentiated honey, the disappearance of a tree's sap, the tree's non-arising from the seed's invisible essence, the revival of a person from the boundary of death, and others. Each illustration is a variant of the five principal images — showing the diversity of the tradition's approach to the single recognition.</p></div>
+          <div class="cs-cell"><div class="csc-label">Research Note</div><p>The Chāndogya 6.1–16 (the Uddālaka-Śvetaketu dialogue) is the most extended sustained philosophical teaching in the Upaniṣadic corpus — sixteen sections exploring the identity of the subtle essence (sat) with the individual self. Śaṅkara's Chāndogya-Bhāṣya on this chapter is among his most technically sophisticated philosophical analyses, including his systematic response to the Bhedābheda (difference-in-identity) reading of the mahāvākya by thinkers like Bhāskara.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>14.4 Ayam Ātmā Brahma — This Self Is Brahman</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">MV·IV</span><span class="cs-title">Ayam Ātmā Brahma</span><span class="cs-sub">Māṇḍūkya Upaniṣad 2 · Atharvaveda · Declaration Mahāvākya</span></div>
+      <div class="cs-body">
+        <p>The Māṇḍūkya's mahāvākya is the most compressed and philosophically densest of the four, appearing in only six words in an Upaniṣad of only twelve verses. "This Self" (<em>ayam ātmā</em>) — the consciousness that is immediately present, the one that is right here, that is knowing this sentence as it is read — "is Brahman" (<em>brahma</em>). The third-person declaration combines the directness of "this" (immediate, present, undeniable) with the philosophical precision of "Brahman" (infinite, self-luminous, the ground of all).</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">The Pratyak Dimension</div><p><em>Ayam</em> (this) points to what is immediately present — not to a distant object of search but to the nearest thing, the consciousness that is reading these words right now. This is the tradition's <em>pratyak</em> (inward, immediate) characterisation of Brahman: not far, not hidden, not requiring a journey to find but already present as the consciousness in which the search is occurring.</p></div>
+          <div class="cs-cell"><div class="csc-label">Metaphoric Architecture Link</div><p>Dream + Tenth Man: the dream-image established that the waking world is, like a dream, produced within consciousness. The "this self" (<em>ayam ātmā</em>) that the Māṇḍūkya identifies as Brahman is precisely the consciousness in which waking and dreaming both arise — the turīya, the fourth, which is not a state but the witness-ground of all states. This is also the tenth man's recognition, now stated without the narrative scaffolding: the one looking is the one looked for.</p></div>
+          <div class="cs-cell"><div class="csc-label">The Turīya Connection</div><p>The Māṇḍūkya's unique contribution to the mahāvākya tradition is its explicit analysis of the Self's relationship to the four states (waking, dreaming, deep sleep, turīya). The "this Self" of the mahāvākya is identified specifically as the turīya — not any of the three manifest states of consciousness but the awareness in which all three arise and cease. The mahāvākya therefore does not identify Brahman with waking consciousness (the experiencer of the gross world) or dreaming consciousness (the creator of the dream-world) but with the pure witness-awareness that was present throughout all three without being any of them.</p></div>
+          <div class="cs-cell"><div class="csc-label">Research Note</div><p>Gauḍapāda's Māṇḍūkya-Kārikā (the first systematic philosophical prose text of the Advaita tradition, predating Śaṅkara and commented upon by him) develops the Māṇḍūkya mahāvākya into a complete philosophical system across four chapters (āgama-prakaraṇa, vaitathya-prakaraṇa, advaita-prakaraṇa, and alātaśānti-prakaraṇa). The alātaśānti chapter's comparison of consciousness to a rotating firebrand (alāta) — which appears to create a circle of fire but is always only the point of fire — is among the most important extended images in the Advaita tradition after the five principal metaphors.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION XV — BĪJA MANTRAS ===== -->
+  <section class="panel new-panel" id="section-15">
+    <div class="section-roman">XV.</div>
+    <h1 class="section-title">Bīja Mantras and Cakra Resonance: Phonology as Embodied Interface</h1>
+    <div class="ground-note violet">
+      <div class="gn-label">Extended Study III of V</div>
+      <p style="margin-bottom:0">Section XV examines the bīja mantras — single-syllable "seed" sounds that function as the phonological condensations of deities, cakras, and tattva-levels — as the most precise instances of what Sections XIII and XIV established: the mantra tradition as the oral archive of the bhāṣya's philosophical content. Each bīja is a Mātṛkā phoneme charged with the specific resonance of a particular mode of the interface, and its contemplation in japa or dhyāna practice is the experiential enactment of the interface-traversal that the bhāṣya traces in conceptual prose.</p>
+    </div>
+    <h3>15.1 Bīja Phonology: Why Single Syllables Carry Entire Traditions</h3>
+    <p>A bīja mantra is typically a consonant (carrying the Śakti of the deity or principle) combined with the long vowel ā (the generative feminine potency) and the anusvāra ṃ (the resonance that extends the sound toward silence). This structure — consonant + ā + ṃ — is the sonic equivalent of the Puruṣa-Prakṛti-interface structure: the consonant's closure and articulatory specificity (Śiva's determinate character), the vowel's openness and resonance (Śakti's generative expansion), and the anusvāra's dissolution into silence (the interface's return toward the Parā level). Every fully formed bīja enacts, in its own production, the complete interface-cycle.</p>
+
+    <table class="data-table">
+      <caption>Primary Bīja Mantras — Phonological Analysis and Interface Assignment</caption>
+      <tr><th>Bīja</th><th>IAST</th><th>Deity / Principle</th><th>Cakra</th><th>Element</th><th>Interface Mode</th><th>Metaphor Connection</th></tr>
+      <tr><td class="skt-cell">ॐ</td><td>oṃ</td><td>Brahman / Praṇava</td><td>All / Sahasrāra</td><td>Turīya</td><td>All four vāk-levels simultaneously</td><td>Ghaṭākāśa — the jar dissolves into the sky-syllable</td></tr>
+      <tr><td class="skt-cell">ह्रीं</td><td>hrīṃ</td><td>Māyā-Śakti / Bhuvaneśvarī</td><td>Ājñā</td><td>Mahat</td><td>The luminous creative power (ha = Śiva, ra = fire, ī = Māyā, ṃ = dissolution)</td><td>Mirror — the creative luminosity that produces the world-reflection</td></tr>
+      <tr><td class="skt-cell">श्रीं</td><td>śrīṃ</td><td>Lakṣmī / Abundance</td><td>Anāhata</td><td>Air/Vāyu</td><td>The auspicious creative force at the heart level (śa = radiance, ra = fire, ī = fulfilment, ṃ = resonance)</td><td>Pūrṇam — fullness that gives of itself without diminishing</td></tr>
+      <tr><td class="skt-cell">क्लीं</td><td>klīṃ</td><td>Kāma / Desire-Fulfillment / Kṛṣṇa</td><td>Svādhiṣṭhāna</td><td>Water</td><td>The fulfilling power (ka = Kāma/Brahman, la = Indra/pervasion, ī = Śakti, ṃ = dissolution)</td><td>Dream — the creative power of desire that produces the world of experience</td></tr>
+      <tr><td class="skt-cell">ऐं</td><td>aiṃ</td><td>Sarasvatī / Speech-Wisdom</td><td>Viśuddhi</td><td>Ether/Ākāśa</td><td>The speech-wisdom power at the throat — the vāk-indriya in its sāttvika mode (ai = Sarasvatī, ṃ = resonance)</td><td>Neti Neti — the wisdom that cannot be finally captured in any predication</td></tr>
+      <tr><td class="skt-cell">हूं</td><td>hūṃ</td><td>Śiva / Protection / Dissolution</td><td>Ājñā–Sahasrāra transition</td><td>Beyond elements</td><td>The fierce protective-dissolving power (ha = Śiva, ū = Bhairava's energy, ṃ = dissolution)</td><td>Rope-Snake — the dissolution of superimposition by fierce clarity</td></tr>
+      <tr><td class="skt-cell">दुं</td><td>duṃ</td><td>Durgā / Protection</td><td>Mūlādhāra–Maṇipūra</td><td>Earth-Fire</td><td>The protective-fierce power at the base-solar interface (da = Durgā, u = protection, ṃ = resonance)</td><td>Tenth Man — the rescuing power that reveals the seeker is the sought</td></tr>
+      <tr><td class="skt-cell">गं</td><td>gaṃ</td><td>Gaṇeśa / Obstacle-Removal</td><td>Mūlādhāra</td><td>Earth</td><td>The obstacle-removing power at the base interface (ga = Gaṇeśa, ṃ = dissolution)</td><td>Rope-Snake — removal of the tāmasika opacity that generates the snake-superimposition</td></tr>
+    </table>
+
+    <h3>15.2 Śrīvidyā and the Pañcadaśī: The Most Elaborate Bīja Structure</h3>
+    <p>The Śrīvidyā tradition of Śākta Tantra deploys the most philosophically elaborate bīja structure in the entire mantra tradition: the Pañcadaśī mantra (the "fifteen-syllable" mantra, also called the <em>Ṣoḍaśī</em> in its sixteen-syllable form including the praṇava). The Pañcadaśī is composed of three kūṭas (sections), each corresponding to a major division of the Devī's nature: the Vāgbhava-kūṭa (the kūṭa of speech and creation), the Kāmarāja-kūṭa (the kūṭa of desire and sustenance), and the Śakti-kūṭa (the kūṭa of consciousness and liberation). These three kūṭas map precisely onto the Sāṃkhya tattva-hierarchy's three primary domains: the kārmika domain (action and creation, Rajas), the bhauktic domain (experience and sustenance, Tamas), and the jñānic domain (knowledge and liberation, Sattva) — establishing the Pañcadaśī as the most complete mantrāvatar of the guṇa-model developed in Part Three.</p>
+
+    <h3>15.3 The Mālāmantra: Traversing the Full Mātṛkā</h3>
+    <p>The <em>Mālāmantra</em> (garland-mantra) is the complete recitation of all fifty-one Mātṛkā phonemes from <em>a</em> through <em>kṣa</em> — the entire Sanskrit alphabet as a single mantra. Its philosophical significance is twofold: it enacts in sonic form the complete traversal of the Mātṛkā matrix developed in Part Three's Section XIII (the fifty-one cosmic phonemes as the generative code of manifestation), and it constitutes, in its full recitation, a phonological micro-cosmos — the universe's complete self-articulation compressed into a single breath-cycle of sound. Practitioners of the Mālāmantra report that sustained japa produces a state in which the boundary between the reciter and the recited dissolves: the phonemes seem to recite themselves through the practitioner, enacting at the experiential level what the theory of Śabda-Brahman claims at the ontological level — that consciousness is always already the self-articulation of the Absolute, and the practitioner's recitation is not a creation of meaning but its recognition.</p>
+  </section>
+
+  <!-- ===== SECTION XVI — TEXTUAL CASE STUDIES ===== -->
+  <section class="panel new-panel" id="section-16">
+    <div class="section-roman">XVI.</div>
+    <h1 class="section-title">Textual Case Studies: Four Passages from the Bhāṣya Corpus</h1>
+    <div class="ground-note violet">
+      <div class="gn-label">Extended Study IV of V</div>
+      <p style="margin-bottom:0">Section XVI provides four detailed textual case studies from the bhāṣya corpus, demonstrating the application of the interface-analytical method developed across Series A to specific Sanskrit passages. Each case study provides the Sanskrit text, transliteration, translation, and a multi-layered analysis covering: grammatical structure, interface-level, guṇa-profile, metaphoric-architecture deployment, and vāk-level analysis. These case studies are designed as methodological models for researchers applying the Series A framework to their own textual work.</p>
+    </div>
+
+    <h3>16.1 Case Study I: The Adhyāsabhāṣya Opening (Brahmasūtra-Bhāṣya Proem)</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">TC·I</span><span class="cs-title">Adhyāsabhāṣya Proem</span><span class="cs-sub">Brahmasūtra-Bhāṣya Introductory Section · The Foundation of the Entire Architecture</span></div>
+      <div class="cs-body">
+        <div class="skt-block" style="font-size:16px;line-height:1.7">युष्मदस्मत्प्रत्ययगोचरयोर् विषयविषयिणोस् तमःप्रकाशवद् विरुद्धस्वभावयोः<br/>इतरेतरभावानुपादानयोश् च इतरेतरधर्माध्यासः सहावस्थानम् असम्भवत् अनुपदापन्नम्<br/>एतस्मिन्न् असत्यर्थे सर्वे प्रमाणप्रमेयव्यवहाराः</div>
+        <p style="margin-top:12px"><em>Translation:</em> Between the object-domain and the subject-domain — which fall under the notions "you" and "I" respectively, which are by nature opposed like darkness and light, which cannot take on each other's nature — the co-occurrence of a mutual superimposition of each other's properties (is not logically possible, yet it is through this logically impossible fact that) all transactions of means-of-knowledge and objects-of-knowledge take place.</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">Grammatical Structure</div><p>The proem's opening sentence is a long compound noun phrase functioning as a concessive absolute: it establishes a logical impossibility (mutual superimposition of opposed natures) and then immediately acknowledges that this impossible fact is the actual condition of ordinary experience. The rhetorical strategy: place the reader in the position of both acknowledging the logic (it cannot be) and recognising their own experience (and yet it is).</p></div>
+          <div class="cs-cell"><div class="csc-label">Interface Level</div><p>This passage operates at the Madhyamā level — it is the sequentially structured, grammatically precise articulation of a philosophical problem that exists at the Paśyantī level (the direct apprehension of the mutual superimposition as a structural feature of all experience) and will be resolved at the Paśyantī–Parā transition (the liberative recognition).</p></div>
+          <div class="cs-cell"><div class="csc-label">Metaphoric Architecture Deployment</div><p>The <em>tamas-prakāśavat</em> (like darkness and light) comparison anticipates the rope-snake image (dim light as the condition of superimposition) and the gāyatrī-mantra's petition (from darkness to light). The entire proem is the theoretical architecture from which all five images will be deployed across the bhāṣya.</p></div>
+          <div class="cs-cell"><div class="csc-label">Guṇa Profile</div><p>The proem's diction is maximally sāttvika: no rhetorical flourish, no appeal to authority, no argument from emotion. It proceeds from the logical structure of the problem to the diagnosis with a clarity that is itself an enactment of what it is describing — it illuminates the darkness it is talking about by being the light it proposes as the solution.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>16.2 Case Study II: Bṛhadāraṇyaka 2.4 — Maitreyī Dialogue</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">TC·II</span><span class="cs-title">Maitreyī Dialogue</span><span class="cs-sub">Bṛhadāraṇyaka Upaniṣad 2.4 · Yājñavalkya's Pre-Renunciation Teaching</span></div>
+      <div class="cs-body">
+        <div class="skt-block" style="font-size:16px;line-height:1.7">न वा अरे पत्युः कामाय पतिः प्रियो भवति<br/>आत्मनस् तु कामाय पतिः प्रियो भवति<br/>न वा अरे जायायै कामाय जाया प्रिया भवति<br/>आत्मनस् तु कामाय जाया प्रिया भवति</div>
+        <p style="margin-top:12px"><em>Translation:</em> Verily, it is not for the husband's sake that the husband is dear, but for the sake of the Self (ātman) that the husband is dear. Verily, it is not for the wife's sake that the wife is dear, but for the sake of the Self that the wife is dear. [Continued across all objects of love: children, wealth, gods, beings, everything.]</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">Philosophical Stakes</div><p>This passage is among the most philosophically important in the entire Upaniṣadic corpus: it identifies the Self (ātman) as the true object of all love — the ground beneath all particular loves, the reason why anything is dear to anyone. It is not a negation of love but a radicalisation: what we love in everything we love is, ultimately, the Self that shines through it.</p></div>
+          <div class="cs-cell"><div class="csc-label">Interface Level</div><p>Ahaṃkāra dissolving — the passage operates at the level of the deepest ahaṃkāra-rooted loves (husband, wife, children, self) and shows each to be founded in something beyond the ahaṃkāra: the ātman that is what we love in everything. The dissolution of each love-object's apparent independent lovability is the tenth-man image applied to every relationship.</p></div>
+          <div class="cs-cell"><div class="csc-label">Śaṅkara's Reading</div><p>Śaṅkara's Bṛhadāraṇyaka-Bhāṣya reads this passage as Yājñavalkya's most direct philosophical teaching to Maitreyī — establishing the identity of ātman with the ground of all value. His commentary identifies the "Self" (<em>ātman</em>) here with Brahman, making this passage one of the most important evidences for the Aham Brahmāsmi recognition.</p></div>
+          <div class="cs-cell"><div class="csc-label">Vāk-Level Analysis</div><p>The passage operates at a Vaikharī level that is remarkably intimate and conversational — it addresses Maitreyī's own existing loves (for her husband Yājñavalkya, among others) and uses them as the entry point. The Vaikharī intimacy (you love your husband) opens the path to the Paśyantī recognition (what you actually love in him is the ātman).</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>16.3 Case Study III: Māṇḍūkya-Kārikā 2.6 — The Dream and the Firebrand</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">TC·III</span><span class="cs-title">The Firebrand Image (Alāta)</span><span class="cs-sub">Gauḍapāda, Māṇḍūkya-Kārikā 4.47–48 · The Alātaśānti-Prakaraṇa</span></div>
+      <div class="cs-body">
+        <p>Gauḍapāda's image of the rotating firebrand (<em>alāta</em>) in the fourth chapter of the Māṇḍūkya-Kārikā is the single most philosophically radical image in the entire Advaita corpus — more radical than any of Śaṅkara's five principal images, and the direct precedent for several of Śaṅkara's most sophisticated later developments.</p>
+        <div class="skt-block" style="font-size:16px;line-height:1.7">यथालातस्पन्दितं यथा भ्रान्त्या उभयाकृति ।<br/>ग्राह्याग्राहकसम्बद्धं तथा विज्ञानमिष्यते ॥</div>
+        <div class="skt-translit" style="margin-top:8px">yathālātaspanditaṃ yathā bhrāntyā ubhayākṛti · grāhyagrāhakasambaddhaṃ tathā vijñānam iṣyate</div>
+        <p>Just as a rotating firebrand, when moved, appears due to confusion to have the form of both [a straight line and a circle] — so also consciousness (vijñāna) is held to be connected with the object (grāhya) and the subject (grāhaka).</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">The Image's Radical Claim</div><p>A firebrand moved in a circle appears to produce a circle of fire. But there is no circle of fire: there is only the point of fire, and the persistence of vision that makes it appear as a continuous circle. The subject-object structure of ordinary consciousness, on this model, is produced not by the meeting of two independently existing things (subject and object) but by the movement of a single consciousness creating the appearance of duality through its own self-movement.</p></div>
+          <div class="cs-cell"><div class="csc-label">Interface Analysis</div><p>The alāta image pushes beyond the ghaṭākāśa (which still requires two things — space and jar — to set up the identity) to a model in which there was never any duality to unify: there is only the one point of fire, and the apparent circle. This corresponds to Kashmir Śaivism's spanda doctrine: the appearance of duality is the Absolute's own self-movement, not the meeting of two independently existing principles.</p></div>
+          <div class="cs-cell"><div class="csc-label">Metaphoric Architecture Extension</div><p>The alāta-image is what the dream-image becomes when pressed to its logical conclusion: if the world is like a dream, what produces the dream? The alāta shows: the same consciousness that is the dreamer, without any prior material being worked on. This is Gauḍapāda's most radical contribution to the Advaita architecture — and the source of Śaṅkara's most sophisticated responses to critics who pressed the dream-analogy to its limits.</p></div>
+          <div class="cs-cell"><div class="csc-label">Research Note</div><p>The fourth chapter of the Māṇḍūkya-Kārikā (Alātaśānti-prakaraṇa, "Chapter on the Quenching of the Firebrand") has been the subject of the most sustained scholarly controversy in the study of Advaita: it deploys terminological and argumentative parallels to Madhyamaka Buddhist philosophy that led earlier scholars (most notably T.R.V. Murti) to argue that Gauḍapāda was essentially a Buddhist. Current scholarship (Nakamura, Comans, Halbfass) generally holds that Gauḍapāda uses Buddhist logical tools while maintaining a fundamentally Upaniṣadic metaphysical framework.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>16.4 Case Study IV: Upadiśasāhasrī 1.1 — The Teaching of a Thousand</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">TC·IV</span><span class="cs-title">Upadiśasāhasrī Opening</span><span class="cs-sub">Śaṅkara's Upadiśasāhasrī (Verse Portion) 1.1 · The Independent Philosophical Work</span></div>
+      <div class="cs-body">
+        <div class="skt-block" style="font-size:16px;line-height:1.7">अशब्दमस्पर्शम् अरूपम् अव्ययम् तथाऽरसं नित्यम् अगन्धवद् च यत् ।<br/>अनाद्यनन्तं महतः परं ध्रुवं निचाय्य तं मृत्युमुखात् प्रमुच्यते ॥</div>
+        <div class="skt-translit" style="margin-top:8px">aśabdam asparśam arūpam avyayam tathārasaṃ nityam agandhavac ca yat · anādy-anantaṃ mahataḥ paraṃ dhruvaṃ nicāyya taṃ mṛtyumukhāt pramucyate</div>
+        <p><em>Translation:</em> That which is without sound, without touch, without form, imperishable, and likewise without taste, eternal, without smell, without beginning and without end, greater than the great (mahat), stable — having discerned That, one is freed from the mouth of death. [Adapted from Kaṭha Upaniṣad 1.3.15]</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">The Five Tanmātras Negated</div><p>The verse negates all five tanmātras (sound/śabda, touch/sparśa, form/rūpa, taste/rasa, smell/gandha) — the subtle sense-qualia that are the Sāṃkhya tattva-hierarchy's subtlest products. In Śaṅkara's usage: to be without these is to be beyond the entire tattva-hierarchy — beyond Prakṛti's productions — at the level of Puruṣa/Brahman itself. The <em>neti neti</em> structure is here compressed into a single stanza.</p></div>
+          <div class="cs-cell"><div class="csc-label">Interface Level</div><p>The verse operates at the boundary between Paśyantī and Parā: its propositional content (what Brahman is not) is still Madhyamā, but the effect of its serial negation — stripping away each sensory qualification — produces a progressive clearing of the buddhi toward the transparency in which the Paśyantī-level apprehension of Brahman becomes available.</p></div>
+          <div class="cs-cell"><div class="csc-label">Connection to Part III</div><p><em>Mahataḥ paraṃ</em> (greater than Mahat) is the verse's most philosophically precise phrase within the Series A framework: it locates Brahman as beyond even the highest interface-product (Mahat/Buddhi), beyond even the most transparent point of the Puruṣa-Prakṛti interface. This is the ghaṭākāśa's sky-space beyond even the subtlest jar.</p></div>
+          <div class="cs-cell"><div class="csc-label">Research Note</div><p>The Upadiśasāhasrī is Śaṅkara's only major independent philosophical work (not a commentary on a prior text) and is therefore the most direct window into his own philosophical architecture apart from his use of the bhāṣya genre's formal constraints. Its verse section (eighteen chapters) and prose section (two chapters) together constitute the most accessible entry-point into Śaṅkara's thought for the advanced student who wishes to understand the philosophy without the mediating structure of the commentary format.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION XVII — LIVING PRACTICE CASE STUDIES ===== -->
+  <section class="panel new-panel" id="section-17">
+    <div class="section-roman">XVII.</div>
+    <h1 class="section-title">Living-Practice Case Studies: Five Instances of the Architecture in Sādhana</h1>
+    <div class="ground-note violet">
+      <div class="gn-label">Extended Study V of V — Terminal Analysis</div>
+      <p style="margin-bottom:0">Section XVII presents five case studies of the metaphoric architecture as it operates in living sādhana contexts — not as historical artifact or philosophical theory but as active philosophical-spiritual practice. These case studies are deliberately drawn from different periods, traditions, and cultural contexts within the broader Vedāntic world, to demonstrate both the architecture's stability across these variations and the productive transformations it undergoes when entering different sādhana frameworks.</p>
+    </div>
+
+    <h3>17.1 Case Study I: The Guru-Disciple Mahāvākya Transmission</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">LP·I</span><span class="cs-title">The Guru-Disciple Mahāvākya Transmission</span><span class="cs-sub">Living Practice · Śravana-Manana-Nididhyāsana Triad</span></div>
+      <div class="cs-body">
+        <p>The classical Advaita sādhana framework prescribes three stages of engagement with the mahāvākya: <em>śravaṇa</em> (hearing the mahāvākya from the guru in the appropriate context), <em>manana</em> (reflective engagement with the philosophical arguments that establish the mahāvākya's meaning), and <em>nididhyāsana</em> (sustained contemplation that transforms the intellectual understanding into existential recognition). This triad is itself the practical enactment of the three lower vāk-levels: śravaṇa operates at the Vaikharī level (the guru's physical voice), manana operates at the Madhyamā level (the student's sequential mental engagement with the arguments), and nididhyāsana aims at the Paśyantī level (the pre-sequential gestalt recognition before which the arguments dissolve because they have accomplished their purpose).</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">The Tenth-Man Structure</div><p>The mahāvākya transmission enacts the tenth-man image in live pedagogical form: the guru is the stranger who says "you are the tenth"; the student is the distressed counter who cannot find the tenth; the mahāvākya is "daśamas tvam asi" — you are what you were looking for. The transmission's effectiveness depends on the student having arrived at the genuine experience of the ninth-man condition: having searched for Brahman as an object and failed.</p></div>
+          <div class="cs-cell"><div class="csc-label">Why It Cannot Be Self-Transmitted</div><p>The tradition insists that the mahāvākya must be received from a qualified guru (not read in a book, not deduced from argument). The tenth-man analogy makes the reason explicit: the ninth man cannot tell himself "you are the tenth" because the problem is precisely that his self-reference is caught within the counting-without-the-counter. The perspective shift requires someone outside the circle of the error.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>17.2 Case Study II: Maṇḍana Miśra and the Debate at Maṇḍanakūṭa</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">LP·II</span><span class="cs-title">The Śaṅkara-Maṇḍana Debate</span><span class="cs-sub">Historical Case Study · c. 788–820 CE · The Architecture Under Philosophical Challenge</span></div>
+      <div class="cs-body">
+        <p>The traditional account of Śaṅkara's philosophical life includes a celebrated debate with Maṇḍana Miśra, the greatest Mīmāṃsaka philosopher of the age and a proponent of the Bhedābheda (difference-and-non-difference) position on Brahman's relationship to the world. Ubhayabhāratī, Maṇḍana's wife, served as judge. The debate reportedly lasted weeks and addressed the full range of the Brahmasūtra's subject matter. Maṇḍana eventually accepted defeat and became Śaṅkara's disciple Sureśvara, whose Naiṣkarmyasiddhi is one of the tradition's most important independent Advaita texts.</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">The Architecture Under Challenge</div><p>Maṇḍana's Bhedābheda position (Brahman is both different and non-different from the world) is, within the metaphoric architecture's terms, a reading of the mirror-image that refuses the complete identification: the face and the reflection are genuinely related, genuinely connected, but the face is not identical to the reflection in every respect. Śaṅkara's counter: the difference is all on the side of the limiting adjunct (upādhi = the mirror), not on the side of the face or the space. The mirror's presence introduces apparent difference where there is ultimately none.</p></div>
+          <div class="cs-cell"><div class="csc-label">Practice Dimension</div><p>The debate-tradition in Advaita is itself a sādhana form: the rigorous public philosophical engagement that forces every image and argument to its most precise formulation is the tradition's institutional equivalent of the guru-student transmission, operating at the Madhyamā level through the full apparatus of formal philosophical reasoning. Śaṅkara's victory is not merely logical: it demonstrates that the architecture holds under the most rigorous challenge available in the tradition's own terms.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>17.3 Case Study III: Ramana Maharṣi and the Self-Enquiry</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">LP·III</span><span class="cs-title">Ramana Maharṣi's Self-Enquiry (Ātma-Vicāra)</span><span class="cs-sub">Living Practice · 19th–20th Century · The Architecture Compressed to a Single Question</span></div>
+      <div class="cs-body">
+        <p>Ramana Maharṣi (1879–1950) developed from his own spontaneous liberation-event at age sixteen a sādhana method of extraordinary economy: the sustained inquiry into the source of the "I"-thought. The method: instead of following the content of mental activity, the practitioner asks "Who am I?" — and rather than answering the question (which would produce another mental object), attends to the source from which the question arises. The "I"-thought, traced to its source, dissolves back into the silent awareness from which it arose — and what remains is the recognition that awareness was never any particular "I."</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">The Tenth-Man Architecture</div><p>Ramana's method is the most economical possible enactment of the tenth-man image: instead of staging the entire narrative (ten men, the river, the count, the stranger), the method directly does what the stranger does — redirects attention from the object of seeking to the subject doing the seeking. "Who am I?" is not a question expecting a propositional answer; it is a gesture of redirection: look toward the asker, not the asked-about.</p></div>
+          <div class="cs-cell"><div class="csc-label">The Silent Transmission</div><p>Ramana's most famous teaching mode was silence: he would sit in the hall (Ramana's presence was itself described as teaching) and the students present would report that the inquiry happened by itself in the force of his silence. This corresponds to the architecture's Parā level: the tradition's understanding is that the guru who has completed the path can transmit the recognition without words, from the level of pure consciousness — the mahāvākya delivered in silence rather than sound.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>17.4 Case Study IV: The Japa Tradition — Mantra as Repeated Liberation Event</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">LP·IV</span><span class="cs-title">Japa Practice</span><span class="cs-sub">Living Practice · Mantra Repetition as Sustained Interface Operation</span></div>
+      <div class="cs-body">
+        <p>Japa — the sustained repetition of a mantra, typically counted on a mālā (rosary) of 108 beads — is the most widely practised formal sādhana in the Hindu tradition, employed across all sampradāyas from the most philosophical Advaita frameworks to the most devotional bhakti contexts. Within the Series A framework, japa is the mantra tradition's equivalent of what the bhāṣya performs at the conceptual level: a repeated interface-operation that, through sustained repetition, progressively transforms the practitioner's buddhi toward the sāttvika orientation in which the mantra's content becomes existentially rather than merely intellectually accessible.</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">The Architecture of 108</div><p>The mālā's 108 beads are not arbitrary. The number 108 appears across the Vedic-Tantric tradition as a cosmologically significant number: 12 × 9 (12 zodiacal signs × 9 planetary positions), or the number of Upaniṣads (in the traditional enumeration), or the diameter of the sun in solar diameters multiplied by the distance of the sun from earth. Within the vāk-framework: 108 repetitions is the mantra's traversal, 108 times, of the full descent from Parā to Vaikharī and the ascent back — a complete interface-cycle 108 times over per mālā.</p></div>
+          <div class="cs-cell"><div class="csc-label">Ajapā and Sabda-Brahman</div><p>The tradition distinguishes three modes of japa: <em>vācika</em> (spoken aloud, Vaikharī), <em>upāṃśu</em> (whispered or barely voiced, Madhyamā), and <em>mānasa</em> (purely mental, approaching Paśyantī). The advanced practitioner's goal is the ajapā state — the condition in which the mantra recites itself, in which the practitioner has become sufficiently transparent that the mantra's own natural sound-movement, its Śabda-Brahman dimension, is what the practice has revealed rather than what it has created.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <h3>17.5 Case Study V: Contemporary Vedānta Teaching — The Architecture in Cross-Cultural Transmission</h3>
+    <div class="case-study">
+      <div class="cs-head"><span class="cs-num">LP·V</span><span class="cs-title">Cross-Cultural Vedānta Transmission</span><span class="cs-sub">Living Practice · Contemporary Context · The Architecture's Adaptability and Its Limits</span></div>
+      <div class="cs-body">
+        <p>The contemporary transmission of Vedānta philosophy into non-Sanskrit-native cultures (Euro-American, East Asian, African) presents the metaphoric architecture with its most challenging practical test: can the images (rope-snake, mirror, dream, tenth man, ghaṭākāśa) function as intended for practitioners who do not share the cultural and experiential framework in which they were developed? Can the mantras carry their interface-function for practitioners reciting them in a language they do not understand from birth?</p>
+        <div class="cs-grid">
+          <div class="cs-cell"><div class="csc-label">What Transfers and What Does Not</div><p>The philosophical content of the images transfers readily: the rope-snake is universally understood as perceptual error, the mirror as reflective confusion, the dream as radical questioning of reality-status. The tenth-man story works in any culture that counts. The ghaṭākāśa works for anyone who has held a jar. The images' philosophically structural content is more universal than their cultural surface. What transfers less readily is the phonological dimension: the mantra tradition's interface-function is inseparable from the specific Sanskrit phonology, and transliteration or translation cannot fully replicate the effect of a syllable whose phonemic character is itself the sādhana's instrument.</p></div>
+          <div class="cs-cell"><div class="csc-label">The Tradition's Response</div><p>The Advaita tradition's classical response to the cross-cultural challenge is the insistence on Sanskrit as the language of the mantras: the Mātṛkā phonemes are not arbitrary cultural symbols but cosmic phonemes whose resonance is intrinsic to their articulation. Contemporary teachers in the lineage of Swami Vivekananda, Swami Chinmayananda, and Swami Dayananda Saraswati have generally maintained Sanskrit as the mantra-language while translating the philosophical content into accessible contemporary idioms — acknowledging that the bhāṣya's conceptual architecture can be transmitted in many languages, but the mantra tradition's phonological architecture requires the original phonemes.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <blockquote class="violet">
+      The architecture does not age. The images are not historical curiosities — they are instruments of cognitive reorientation whose effectiveness derives not from cultural familiarity but from the structural accuracy with which they diagnose the structure of ordinary experience and propose its liberation. As long as people mistake ropes for snakes, the rope-snake image is available. As long as people fail to find themselves in the count, the tenth man waits to be recognised. The architecture's vitality is coextensive with the vitality of the problem it was designed to solve — which is, as the tradition insists, not a historical problem but the condition of ordinary sentient existence.<span class="cite">Series A · Extended Studies · Terminal Analysis</span>
+    </blockquote>
+    <div class="divider">ॐ पूर्णमदः पूर्णमिदम्</div>
+  </section>
+
+  <!-- FOOTNOTES -->
+  <section class="panel" id="footnotes">
+    <div class="section-roman">✦</div>
+    <h1 class="section-title">Footnotes</h1>
+    <div class="fn-list">
+      <div class="fn"><span class="fnum">1</span><span>Śaṅkara's Brahmasūtra-Bhāṣya: Swami Gambhirananda, trans., 3 vols. (Calcutta: Advaita Ashrama, 1965). On the bhāṣya genre: Patrick Olivelle, "The Semantic History of <em>Dharma</em>," <i>Journal of Indian Philosophy</i> 32 (2004): 491–511.</span></div>
+      <div class="fn"><span class="fnum">2</span><span>Adhyāsa: Karl Potter, <i>Presuppositions of India's Philosophies</i> (Westport: Greenwood, 1963), chapter 5; S. S. Suryanarayana Sastri, "The Doctrine of Māyā," <i>Philosophy East and West</i> 1/1 (1951).</span></div>
+      <div class="fn"><span class="fnum">3</span><span>Rope-snake (<em>rajju-sarpa</em>): Eliot Deutsch, <i>Advaita Vedānta: A Philosophical Reconstruction</i> (Honolulu: University of Hawaii, 1969), chapter 3.</span></div>
+      <div class="fn"><span class="fnum">4</span><span>Mirror reflection and cit-ābhāsa: Sengaku Mayeda, <i>Śaṅkara's Upadiśasāhasrī</i> (Tokyo: Hokuseido, 1979); A. J. Alston, <i>The Method of Early Advaita Vedānta</i> (London: Shanti Sadan, 1997).</span></div>
+      <div class="fn"><span class="fnum">5</span><span>Dream and dṛṣṭi-sṛṣṭivāda: Gauḍapāda's Māṇḍūkya-Kārikā, trans. Swami Nikhilananda (Belur Math: Ramakrishna Ashrama, 1936). T. R. V. Murti, <i>The Central Philosophy of Buddhism</i> (London: Allen &amp; Unwin, 1955), appendix.</span></div>
+      <div class="fn"><span class="fnum">6</span><span>Tenth man (<em>daśama</em>): R. Balasubramanian, "The Method of Vedānta," in <i>Perspectives on Vedanta</i>, ed. S. S. Pappu (Leiden: Brill, 1988).</span></div>
+      <div class="fn"><span class="fnum">7</span><span>Ghaṭākāśa: Paul Hacker, "Vivarta: Studien zur Geschichte der illusionistischen Kosmologie und Erkenntnistheorie der Inder," <i>Akademie der Wissenschaften und Literatur</i>, Abhandlungen 1953.</span></div>
+      <div class="fn"><span class="fnum">8</span><span>Neti neti: Bṛhadāraṇyaka Upaniṣad 4.5.15; Śaṅkara's Bṛhadāraṇyaka-Bhāṣya, trans. Swami Mādhavānanda (Calcutta: Advaita Ashrama, 1934). On apophatic theology comparatively: Denys Turner, <i>The Darkness of God</i> (Cambridge, 1995).</span></div>
+      <div class="fn"><span class="fnum">9</span><span>Lakṣaṇā: K. K. Raja, <i>Indian Theories of Meaning</i> (Adyar: Theosophical Publishing House, 1963); Harold Coward and K. K. Raja, eds., <i>Encyclopedia of Indian Philosophies: The Philosophy of the Grammarians</i> (Princeton, 1990).</span></div>
+      <div class="fn"><span class="fnum">10</span><span>Mahāvākyas: Swami Chinmayananda, <i>The Mahāvākyas</i> (Mumbai: Central Chinmaya Mission Trust, 1975); Eliot Deutsch and J. A. B. van Buitenen, <i>A Source Book of Advaita Vedānta</i> (Honolulu, 1971).</span></div>
+      <div class="fn"><span class="fnum">11</span><span>Tat tvam asi and lakṣaṇā: Ingalls, "Śaṅkara's Arguments Against the Buddhists," <i>Philosophy East and West</i> 3 (1954); Sengaku Mayeda, "On the Authenticity of the Bhagavadgīṭā-Bhāṣya Ascribed to Śaṅkara," <i>Wiener Zeitschrift</i> 9 (1965).</span></div>
+      <div class="fn"><span class="fnum">12</span><span>Gāyatrī: Jeanine Miller, <i>The Vision of Cosmic Order in the Vedas</i> (London: Routledge &amp; Kegan Paul, 1985). Śaṅkara's Chāndogya-Bhāṣya 3.12: Swami Gambhirananda, trans. (Calcutta: Advaita Ashrama, 1983).</span></div>
+      <div class="fn"><span class="fnum">13</span><span>Bīja mantras: Harvey Alper, ed., <i>Understanding Mantras</i> (Albany: SUNY, 1989); Madhu Khanna, <i>Yantra: The Tantric Symbol of Cosmic Unity</i> (London: Thames &amp; Hudson, 1979).</span></div>
+      <div class="fn"><span class="fnum">14</span><span>Śrīvidyā and the Pañcadaśī: Douglas Renfrew Brooks, <i>The Secret of the Three Cities: An Introduction to Hindu Śākta Tantrism</i> (Chicago: University of Chicago Press, 1990).</span></div>
+      <div class="fn"><span class="fnum">15</span><span>Haṃsa and ajapā-gāyatrī: Haṃsopaniṣad, in <i>Minor Upanishads</i>, ed. T. R. Srinivasa Ayyangar (Adyar, 1938). Vijñānabhairava: Jaideva Singh, trans. (Delhi: Motilal Banarsidass, 1979).</span></div>
+      <div class="fn"><span class="fnum">16</span><span>Gauḍapāda's Māṇḍūkya-Kārikā: Richard King, <i>Early Advaita Vedānta and Buddhism</i> (Albany: SUNY, 1995); Michael Comans, <i>The Method of Early Advaita Vedānta</i> (Delhi: Motilal Banarsidass, 2000).</span></div>
+      <div class="fn"><span class="fnum">17</span><span>Ramana Maharṣi and ātma-vicāra: Arthur Osborne, <i>Ramana Maharshi and the Path of Self-Knowledge</i> (London: Rider, 1954); David Godman, ed., <i>Be As You Are: The Teachings of Sri Ramana Maharshi</i> (London: Penguin Arkana, 1985).</span></div>
+      <div class="fn"><span class="fnum">18</span><span>Japa and mālā tradition: Alain Daniélou, <i>Yoga: Mastering the Secrets of Matter and the Universe</i> (Rochester: Inner Traditions, 1991); Swami Sivananda, <i>Japa Yoga</i> (Rishikesh: Divine Life Society, 1952).</span></div>
+      <div class="fn"><span class="fnum">19</span><span>Contemporary Vedānta transmission: Anantanand Rambachan, <i>The Limits of Scripture: Vivekananda's Reinterpretation of the Vedas</i> (Honolulu: University of Hawaii, 1994); Wilhelm Halbfass, <i>India and Europe</i> (Albany: SUNY, 1988).</span></div>
+      <div class="fn"><span class="fnum">20</span><span>Upadiśasāhasrī: Sengaku Mayeda, trans., <i>A Thousand Teachings: The Upadiśasāhasrī of Śaṅkara</i> (Tokyo: University of Tokyo Press, 1979; repr. Albany: SUNY, 1992).</span></div>
+      <div class="fn"><span class="fnum">21</span><span>Śaṅkara-Maṇḍana debate: W. Cenkner, <i>A Tradition of Teachers: Śaṅkara and the Jagadgurus Today</i> (Delhi: Motilal Banarsidass, 1983). Maṇḍana Miśra's Brahmasiddhi: S. Kuppuswami Sastri, ed. (Madras: Government Oriental Manuscripts Library, 1937).</span></div>
+      <div class="fn"><span class="fnum">22</span><span>Bhāmatī and Vivaraṇa schools: Vācaspati Miśra's Bhāmatī and Padmapāda's Pañcapādikā, in P. S. Rama Pisharody, ed., <i>Bhāmatī, Kalpataru and Parimala</i>, 2 vols. (Bombay, 1917). Francis X. D'Sa, <i>Śabdaprāmāṇyam in Śabara and Kumārila</i> (Vienna: De Nobili, 1980).</span></div>
+    </div>
+  </section>
+
+  <!-- BIBLIOGRAPHY -->
+  <section class="panel" id="bibliography">
+    <div class="section-roman">★</div>
+    <h1 class="section-title">Bibliography</h1>
+    <div class="bib-block">
+      <h4 class="bib-heading">Primary Sanskrit Sources · Bhāṣyas and Upaniṣads</h4>
+      <div class="bib-entry">Śaṅkarācārya. <i>Brahmasūtra-Bhāṣya</i>. Trans. Swami Gambhirananda, 3 vols. Calcutta: Advaita Ashrama, 1965.</div>
+      <div class="bib-entry">Śaṅkarācārya. <i>Bṛhadāraṇyaka-Upaniṣad-Bhāṣya</i>. Trans. Swami Mādhavānanda. Calcutta: Advaita Ashrama, 1934.</div>
+      <div class="bib-entry">Śaṅkarācārya. <i>Chāndogya-Upaniṣad-Bhāṣya</i>. Trans. Swami Gambhirananda. Calcutta: Advaita Ashrama, 1983.</div>
+      <div class="bib-entry">Śaṅkarācārya. <i>Māṇḍūkya-Kārikā-Bhāṣya</i> (with Gauḍapāda's Kārikā). Trans. Swami Nikhilananda. Belur Math: Ramakrishna Ashrama, 1936.</div>
+      <div class="bib-entry">Śaṅkarācārya. <i>Upadiśasāhasrī</i>. Trans. Sengaku Mayeda. Albany: SUNY Press, 1992.</div>
+      <div class="bib-entry">Gauḍapāda. <i>Māṇḍūkya-Kārikā</i>. See Śaṅkara's Bhāṣya above; separate edition: Karmarkar, R. D. (Pune: Bhandarkar Oriental Research Institute, 1953).</div>
+      <div class="bib-entry">Vācaspati Miśra. <i>Bhāmatī</i> (on Brahmasūtra-Bhāṣya). In <i>Bhāmatī, Kalpataru and Parimala</i>, ed. P. S. Rama Pisharody, 2 vols. Bombay, 1917.</div>
+      <div class="bib-entry">Maṇḍana Miśra. <i>Brahmasiddhi</i>. Ed. S. Kuppuswami Sastri. Madras: Government Oriental Manuscripts Library, 1937.</div>
+    </div>
+    <div class="bib-block">
+      <h4 class="bib-heading">Advaita Vedānta — Secondary Studies</h4>
+      <div class="bib-entry">Alston, A. J. <i>The Method of Early Advaita Vedānta</i>. London: Shanti Sadan, 1997.</div>
+      <div class="bib-entry">Comans, Michael. <i>The Method of Early Advaita Vedānta</i>. Delhi: Motilal Banarsidass, 2000.</div>
+      <div class="bib-entry">Deutsch, Eliot. <i>Advaita Vedānta: A Philosophical Reconstruction</i>. Honolulu: University of Hawaii Press, 1969.</div>
+      <div class="bib-entry">Deutsch, Eliot and J. A. B. van Buitenen. <i>A Source Book of Advaita Vedānta</i>. Honolulu: University of Hawaii Press, 1971.</div>
+      <div class="bib-entry">Hacker, Paul. <i>Vivarta</i>. Abhandlungen der Akademie der Wissenschaften und Literatur. Wiesbaden, 1953.</div>
+      <div class="bib-entry">King, Richard. <i>Early Advaita Vedānta and Buddhism</i>. Albany: SUNY Press, 1995.</div>
+      <div class="bib-entry">Mayeda, Sengaku. <i>Śaṅkara's Upadiśasāhasrī</i>. Tokyo: Hokuseido, 1979.</div>
+      <div class="bib-entry">Potter, Karl. <i>Presuppositions of India's Philosophies</i>. Westport: Greenwood, 1963.</div>
+    </div>
+    <div class="bib-block">
+      <h4 class="bib-heading">Mantra, Language, and Sound Studies</h4>
+      <div class="bib-entry">Alper, Harvey, ed. <i>Understanding Mantras</i>. Albany: SUNY Press, 1989.</div>
+      <div class="bib-entry">Brooks, Douglas Renfrew. <i>The Secret of the Three Cities: An Introduction to Hindu Śākta Tantrism</i>. Chicago: University of Chicago Press, 1990.</div>
+      <div class="bib-entry">Coward, Harold and David Goa. <i>Mantra: Hearing the Divine in India</i>. Chambersburg: Anima, 1991.</div>
+      <div class="bib-entry">Miller, Jeanine. <i>The Vision of Cosmic Order in the Vedas</i>. London: Routledge &amp; Kegan Paul, 1985.</div>
+      <div class="bib-entry">Raja, K. Kunjunni. <i>Indian Theories of Meaning</i>. Adyar: Theosophical Publishing House, 1963.</div>
+    </div>
+    <div class="bib-block">
+      <h4 class="bib-heading">Living Tradition and Practice</h4>
+      <div class="bib-entry">Cenkner, W. <i>A Tradition of Teachers: Śaṅkara and the Jagadgurus Today</i>. Delhi: Motilal Banarsidass, 1983.</div>
+      <div class="bib-entry">Godman, David, ed. <i>Be As You Are: The Teachings of Sri Ramana Maharshi</i>. London: Penguin Arkana, 1985.</div>
+      <div class="bib-entry">Halbfass, Wilhelm. <i>India and Europe</i>. Albany: SUNY Press, 1988.</div>
+      <div class="bib-entry">Osborne, Arthur. <i>Ramana Maharshi and the Path of Self-Knowledge</i>. London: Rider, 1954.</div>
+      <div class="bib-entry">Rambachan, Anantanand. <i>The Limits of Scripture</i>. Honolulu: University of Hawaii Press, 1994.</div>
+      <div class="bib-entry">Sivananda, Swami. <i>Japa Yoga</i>. Rishikesh: Divine Life Society, 1952.</div>
+    </div>
+    <div class="divider">ॐ तत् सत्</div>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section class="panel" id="glossary">
+    <div class="section-roman">☆</div>
+    <h1 class="section-title">Glossary</h1>
+    <div class="gloss-section-label first">The Bhāṣya Architecture</div>
+    <div class="gloss-entry"><div class="gloss-term">भाष्य<span class="translit">bhāṣya</span></div><div class="gloss-def">Commentary, exposition — the genre of Sanskrit literature that expounds a prior text (sūtra or Upaniṣad), positioning itself as the text's correct interpretation while enacting original philosophical construction.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">अध्यास<span class="translit">adhyāsa</span></div><div class="gloss-def">Superimposition — the structural error by which the properties of one thing are mistakenly attributed to another; in Śaṅkara's Adhyāsabhāṣya, the constitutive structure of ordinary experience as the mutual superimposition of Self and non-Self.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">विवर्तवाद<span class="translit">vivartavāda</span></div><div class="gloss-def">The doctrine of apparent modification — Śaṅkara's account of the world's relationship to Brahman as apparent modification (vivarta) rather than actual transformation (pariṇāma): the world is Brahman appearing as the world, not Brahman changing into the world.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">लक्षणा<span class="translit">lakṣaṇā</span></div><div class="gloss-def">Indirect indication, secondary meaning — the linguistic function by which a word's meaning is extended beyond its primary denotation to indicate something related; Śaṅkara's primary tool for approaching Brahman through language that cannot literally denote it.</div></div>
+    <div class="gloss-section-label">The Five Principal Images</div>
+    <div class="gloss-entry"><div class="gloss-term">रज्जुसर्पः<span class="translit">rajju-sarpaḥ</span></div><div class="gloss-def">Rope-snake — Śaṅkara's most-deployed image for adhyāsa: the snake seen in a rope in dim light is the model for the world seen in Brahman under the dim light of avidyā.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">दर्पणप्रतिबिम्बम्<span class="translit">darpaṇa-pratibimba</span></div><div class="gloss-def">Mirror-reflection — the image for the individual self (jīva) as cit-ābhāsa: the reflection of Brahman-consciousness in the mirror of buddhi, neither identical to Brahman nor a second, independently existing consciousness.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">स्वप्न<span class="translit">svapna</span></div><div class="gloss-def">Dream — the image for the ontological status of the waking world: like a dream-world, the waking world is produced within and by consciousness, without independent existence outside the consciousness that produces it.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">दशमः<span class="translit">daśamaḥ</span></div><div class="gloss-def">The tenth man — the image for the mahāvākya's pedagogical operation: the student who cannot find Brahman as an external object is like the counter who cannot find the tenth man because the tenth man is the one counting.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">घटाकाश<span class="translit">ghaṭākāśa</span></div><div class="gloss-def">Space in a jar — the image for Brahman's relationship to individual consciousness: the space inside the jar and the space outside are the same space; the jar's apparent limitation of space is the model for the body's apparent limitation of Brahman-consciousness.</div></div>
+    <div class="gloss-section-label">Mantras and Practice</div>
+    <div class="gloss-entry"><div class="gloss-term">महावाक्य<span class="translit">mahāvākya</span></div><div class="gloss-def">Great Saying — any of the four principal Upaniṣadic sentences (Prajñānam Brahma, Aham Brahmāsmi, Tat Tvam Asi, Ayam Ātmā Brahma) that directly assert the identity of ātman and Brahman, constituting the keystone scriptural evidence for the Advaita position.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">बीज<span class="translit">bīja</span></div><div class="gloss-def">Seed — a single-syllable mantra that functions as the phonological condensation of a deity, principle, or cakra-level; its recitation in japa is the sonic enactment of the interface-mode it corresponds to.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">जप<span class="translit">japa</span></div><div class="gloss-def">Repetition — the sustained repetition of a mantra, typically counted on a mālā, as a primary sādhana practice; the mantra tradition's equivalent of the bhāṣya's repeated conceptual engagement with the liberation-event.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">अजपागायत्री<span class="translit">ajapā-gāyatrī</span></div><div class="gloss-def">The prayer recited without recitation — the natural breath-mantra Haṃsa/So'ham, which the tradition identifies as already being recited 21,600 times daily by every living being simply through the act of breathing.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">श्रवणमनननिदिध्यासन<span class="translit">śravaṇa-manana-nididhyāsana</span></div><div class="gloss-def">Hearing-reflection-contemplation — the classical Advaita triad of sādhana stages: hearing the mahāvākya from the guru (Vaikharī), reflecting on its philosophical implications (Madhyamā), and sustained contemplation until intellectual understanding becomes existential recognition (Paśyantī-level).</div></div>
+    <div class="gloss-entry"><div class="gloss-term">नेति नेति<span class="translit">neti neti</span></div><div class="gloss-def">Not this, not this — the apophatic formula of the Bṛhadāraṇyaka Upaniṣad; the architectural complement to the five positive images in Śaṅkara's bhāṣya: the progressive negation of all positive characterisations of Brahman, including the negation itself.</div></div>
+    <div class="gloss-entry"><div class="gloss-term">चिदाभास<span class="translit">cit-ābhāsa</span></div><div class="gloss-def">Reflection of consciousness — the individual self (jīva) as the reflection of Brahman-consciousness (cit) in the mirror of buddhi; neither a second consciousness nor a portion of Brahman, but the relationship between Brahman and buddhi actualised as apparent individual knowing.</div></div>
+  </section>
+
+  <div class="footer-band">
+    <div class="om skt">ॐ असतो मा सद् गमय · तमसो मा ज्योतिर् गमय · मृत्योर् माऽमृतं गमय</div>
+    <div class="om-translit">oṃ asato mā sad gamaya · tamaso mā jyotir gamaya · mṛtyor mā 'mṛtaṃ gamaya — Bṛhadāraṇyaka Upaniṣad 1.3.28</div>
+    <div class="fb-title">Series A · Part Four · Extended Edition · Sections I–XVII</div>
+    <div class="fb-sub">Cultural Musings · Vedic &amp; Śāstric Research Platform · culturalmusings.com</div>
+  </div>
+</main>
+</div>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('.tab-link');
+  var panels=document.querySelectorAll('.panel');
+  function activate(tabId){
+    panels.forEach(function(p){p.classList.toggle('active',p.id===tabId);});
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('data-tab')===tabId);});
+    window.scrollTo({top:0,behavior:'instant'});
+    try{history.replaceState(null,'','#'+tabId);}catch(e){}
+  }
+  links.forEach(function(link){
+    link.addEventListener('click',function(e){
+      e.preventDefault();
+      activate(link.getAttribute('data-tab'));
+    });
+  });
+  document.querySelectorAll('.accordion-header').forEach(function(hdr){
+    hdr.addEventListener('click',function(){
+      var body=hdr.nextElementSibling;
+      var open=body.classList.contains('open');
+      hdr.classList.toggle('open',!open);
+      body.classList.toggle('open',!open);
+    });
+  });
+  var initial=(window.location.hash||'').replace('#','');
+  var validIds=Array.prototype.map.call(panels,function(p){return p.id;});
+  activate(initial&&validIds.indexOf(initial)!==-1?initial:'series-context');
+})();
+</script>
+</body>
+</html>
